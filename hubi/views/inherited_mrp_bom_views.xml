@@ -4,7 +4,7 @@
     <record id="hubi_mrp_bom_form_view" model="ir.ui.view">
         <field name="name">hubi.mrp.bom.form</field>
         <field name="model">mrp.bom</field>
-        <field name="inherit_id" ref="hubi_bom.mrp_bom_form_view"/>
+        <field name="inherit_id" ref="mrp.mrp_bom_form_view"/>
         <field name="arch" type="xml">
   
             <xpath expr="//field[@name='product_tmpl_id']" position="replace"/>
@@ -33,7 +33,7 @@
                     <field name="product_id" groups="product.group_product_variant"/>
                     <field name="product_qty"/>
                     <field name="product_uom_id" groups="product.group_uom"/>
-                    <!--field name="routing_id" groups="mrp.group_mrp_routings"/ -->
+                    <field name="routing_id" groups="mrp.group_mrp_routings"/>
                     <field name="display_name"/>
                 </tree>
             </field>
@@ -46,7 +46,7 @@
             <field name="domain">[]</field> <!-- force empty -->
             <field name="view_type">form</field>
             <field name="view_mode">tree,kanban,form</field>
-            <field name="search_view_id" ref="hubi_bom.view_mrp_bom_filter"/>
+            <field name="search_view_id" ref="mrp.view_mrp_bom_filter"/>
             <field name="help" type="html">
               <p class="oe_view_nocontent_create">
                 Click to create a bill of material.

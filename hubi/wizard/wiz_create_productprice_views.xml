@@ -4,9 +4,7 @@
 		<field name="name">wiz.createproductprice.form1</field>
 		<field name="model">wiz.productprice</field>
 		<field name="arch" type="xml">
-		
 			<form string="Create Prices">
-			
 				<div class="oe_title">
 					<label for="category_id" />
 					<h2>
@@ -25,7 +23,6 @@
                     <separator />
                     
 				</div>
-				
 			
 			<separator />
 

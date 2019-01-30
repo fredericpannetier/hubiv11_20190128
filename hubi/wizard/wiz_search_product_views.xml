@@ -86,7 +86,7 @@
                         </t>
                     </templates>
                     -->
-                    <tree string="Price List Lines" name='Price_List_Lines' editable="top" create="false">
+                    <tree string="Price List Lines" name='Price_List_Lines' editable="top">
                         <field name="order_line_id" invisible="1"/>
                         <field name="pricelist_line_id" invisible="1"/>
                         <field name="product_id" readonly="1"/>

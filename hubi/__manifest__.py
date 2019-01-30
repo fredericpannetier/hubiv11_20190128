@@ -8,7 +8,7 @@
 Gestion HUBI
 """,
     
-    'depends' : ['base','base_setup','product','mail','hubi_bom','sale','delivery'],
+    'depends' : ['base','base_setup','product', 'analytic', 'web_planner','mail','mrp','sale','delivery'],
     'data': ["data/hubi_template_email.xml",
              "views/module_option_views.xml",
              "wizard/wiz_confirm_dialog_views.xml",

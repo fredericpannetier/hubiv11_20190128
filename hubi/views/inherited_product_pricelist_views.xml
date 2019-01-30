@@ -47,6 +47,7 @@
                 <group string="Shipping" name="shipping">
                     <field name="shipping" />
                     <field name="shipping_price_kg" attrs="{'invisible': [('shipping', '=', False)]}"/>
+					<field name="company_id" />
                 </group>
             </xpath>
             <!-->
@@ -58,7 +59,7 @@
             -->    
             <xpath expr="//field[@name='item_ids']" position="replace"/>
             <xpath expr="//separator" position="after"> 
-                 <field name="item_ids" nolabel="1" context="{'default_base':'list_price'}">
+                <field name="item_ids" nolabel="1" context="{'default_base':'list_price'}">
                 <tree string="Pricelist Items" default_order="name">
                     <field name="name" string="Applicable On"/>
                     <field name="info_price" />
@@ -105,6 +106,8 @@
                         <field name="price_option" attrs="{'invisible': [('is_tarif_option', '=', False)]}" />
                         <field name="price_ifls" string="IFLS" attrs="{'invisible': [('is_ifls', '=', False)]}" />
                         <field name="description_promo" attrs="{'invisible': [('is_tarif_lib_promo', '=', False)]}" />
+                        
+
                     </group>
                     <group>
                         <field name="price_ean13" string="EAN13" />
