@@ -6,37 +6,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-04 13:43+0000\n"
-"PO-Revision-Date: 2018-12-04 13:43+0000\n"
+"POT-Creation-Date: 2018-05-17 08:50+0000\n"
+"PO-Revision-Date: 2018-05-17 08:50+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
-
-#. module: hubi
-#: model:mail.template,body_html:hubi.email_template_accounting_transfer
-msgid "\n"
-"<p>Dear,\n"
-"You have been invited to transfer your writting from  ${object.date_start[8:10]}-${object.date_start[5:7]}-${object.date_start[0:4]} to  ${object.date_end[8:10]}-${object.date_end[5:7]}-${object.date_end[0:4]}\n"
-" in your accounting.\n"
-"<br/>\n"
-"Best regards,\n"
-"<br/>\n"
-"${object.create_uid.signature | safe}  \n"
-"</p>\n"
-""
-msgstr "\n"
-"<p>Dear,\n"
-"You have been invited to transfer your writting from  ${object.date_start[8:10]}-${object.date_start[5:7]}-${object.date_start[0:4]} to  ${object.date_end[8:10]}-${object.date_end[5:7]}-${object.date_end[0:4]}\n"
-" in your accounting.\n"
-"<br/>\n"
-"Best regards,\n"
-"<br/>\n"
-"${object.create_uid.signature | safe}  \n"
-"</p>\n"
-""
 
 #. module: hubi
 #: model:ir.model.fields,field_description:hubi.field_sale_report_carrier_nbr
@@ -235,20 +212,20 @@ msgstr "Un departement existe  déjà avec ce code. Il doit être unique !"
 
 #. module: hubi
 #: sql_constraint:hubi.labelmodel:0
-msgid "A label model already exists with this code. It must be unique !"
-msgstr "Une étiquette modèle existe  déjà avec ce code. Il doit être unique !"
+msgid "A label already exists with this code. It must be unique !"
+msgstr "Une étiquette existe  déjà avec ce code. Elle doit être unique !"
 
 #. module: hubi
 #: sql_constraint:hubi.module_option:0
-msgid "A module_option already exists with this code in this company. It must be unique !"
-msgstr "Un module_option existe  déjà avec ce code. Il doit être unique !"
+msgid "A module_option already exists with this code. It must be unique !"
+msgstr "Un module option existe  déjà avec ce code. Il doit être unique !"
 
 #. module: hubi
 #: model:ir.actions.act_window,help:hubi.action_hubi_product_pricelist
 msgid "A price list contains rules to be evaluated in order to compute\n"
 "                the sales price of the products."
-msgstr "Un tarif contient des règles d'évaluation afin de calculer\n"
-"                le prix des aricles."
+msgstr "A price list contains rules to be evaluated in order to compute\n"
+"                the sales price of the products."
 
 #. module: hubi
 #: sql_constraint:hubi.printer:0
@@ -261,24 +238,21 @@ msgid "A wiz already exists with this sale order. It must be unique !"
 msgstr "Un assistant existe  déjà avec ce code. Il doit être unique !"
 
 #. module: hubi
-#: code:addons/hubi/reports/trial_balance_xlsx.py:25
-#: model:ir.model,name:hubi.model_account_account
 #: model:ir.model.fields,field_description:hubi.field_delivery_carrier_account
 #: model:ir.model.fields,field_description:hubi.field_hubi_shipper_account
 #: model:ir.ui.menu,name:hubi.menu_hubi_datas_account
-#, python-format
 msgid "Account"
 msgstr "Compte"
+
+#. module: hubi
+#: model:ir.ui.menu,name:hubi.menu_hubi_account
+msgid "Account Billing"
+msgstr "Facturation"
 
 #. module: hubi
 #: model:ir.model.fields,field_description:hubi.field_wiz_create_product_from_category_account_expense_id
 msgid "Account Expense"
 msgstr "Dépense"
-
-#. module: hubi
-#: model:ir.ui.view,arch_db:hubi.wiz_transfert_compta
-msgid "Account File"
-msgstr "Fichier comptable"
 
 #. module: hubi
 #: model:ir.ui.menu,name:hubi.menu_hubi_account_journal
@@ -306,32 +280,21 @@ msgid "Account Summary"
 msgstr "Relevé Facture"
 
 #. module: hubi
-#: model:ir.ui.view,arch_db:hubi.wiz_general_settings_form
-msgid "Account Transfer"
-msgstr "Compte de Transfert"
-
-#. module: hubi
-#: code:addons/hubi/reports/trial_balance_xlsx.py:71
-#, python-format
-msgid "Account balance at 0 filter"
-msgstr "Compte balance filtre à 0"
-
-#. module: hubi
 #: model:ir.ui.view,arch_db:hubi.report_account_invoice_summary
 msgid "Account summary"
 msgstr "Relevé facture"
 
 #. module: hubi
-#: model:ir.ui.menu,name:hubi.menu_hubi_account
-#: model:ir.ui.view,arch_db:hubi.wiz_general_settings_form
-msgid "Accounting"
-msgstr "Comptabilité"
+#: model:ir.model.fields,field_description:hubi.field_res_partner_accounting_account_customer
+#: model:ir.model.fields,field_description:hubi.field_res_users_accounting_account_customer
+msgid "Accounting Account Customer"
+msgstr "Compte Comptable Client"
 
 #. module: hubi
-#: model:ir.ui.menu,name:hubi.menu_hubi_transfert_compta
-#: model:ir.ui.view,arch_db:hubi.wiz_transfert_compta
-msgid "Accounting Transfer"
-msgstr "Transfert comptabilité"
+#: model:ir.model.fields,field_description:hubi.field_res_partner_accounting_account_supplier
+#: model:ir.model.fields,field_description:hubi.field_res_users_accounting_account_supplier
+msgid "Accounting Account Supplier"
+msgstr "Compte Comptable Fournisseur"
 
 #. module: hubi
 #: model:ir.ui.view,arch_db:hubi.moduleoption_search
@@ -393,23 +356,16 @@ msgid "All Channels Sales Orders"
 msgstr "Bons de commande de toutes les équipes"
 
 #. module: hubi
-#: code:addons/hubi/reports/trial_balance_xlsx.py:70
-#, python-format
-msgid "All entries"
-msgstr "Toutes entrées"
-
-#. module: hubi
-#: code:addons/hubi/reports/trial_balance_xlsx.py:69
-#, python-format
-msgid "All posted entries"
-msgstr "Toutes entrées modifiées"
-
-#. module: hubi
 #: selection:account.invoice,discount_type:0
 #: model:ir.ui.view,arch_db:hubi.report_invoice_document_hubi
 #: model:ir.ui.view,arch_db:hubi.report_saleorder_hubi_document
 msgid "Amount"
 msgstr "Montant"
+
+#. module: hubi
+#: model:ir.model.fields,field_description:hubi.field_account_invoice_tax_amount_discount
+msgid "Amount Discount"
+msgstr "Montant Remise"
 
 #. module: hubi
 #: model:ir.model.fields,field_description:hubi.field_sale_report_carrier_amt_invoiced
@@ -445,7 +401,7 @@ msgstr "Montant commission kg"
 #. module: hubi
 #: model:ir.model.fields,field_description:hubi.field_account_invoice_amount_discount_signed
 msgid "Amount discount in Company Currency"
-msgstr "Montant de la remise dans la devise de la Société"
+msgstr "Amount discount in Company Currency"
 
 #. module: hubi
 #: model:ir.ui.menu,name:hubi.menu_hubi_invoice_report_detail
@@ -475,11 +431,6 @@ msgstr "Analyse Récapitulatif Journalier"
 #: model:ir.ui.view,arch_db:hubi.view_hubi_saleorder_delivery_report_pivot
 msgid "Analysis Summary Delivery"
 msgstr "Analyse Récapitulatif Livraison"
-
-#. module: hubi
-#: model:ir.actions.act_window,name:hubi.action_hubi_saleorder_report_reference
-msgid "Analysis Summary Reference"
-msgstr "Analyse Récapitulatif Reference"
 
 #. module: hubi
 #: model:ir.actions.act_window,name:hubi.action_hubi_saleorder_report_weight
@@ -537,25 +488,6 @@ msgid "Automatic Batch"
 msgstr "No de lot Automatique"
 
 #. module: hubi
-#: model:ir.model.fields,field_description:hubi.field_res_partner_auxiliary_account_customer
-#: model:ir.model.fields,field_description:hubi.field_res_users_auxiliary_account_customer
-msgid "Auxiliary Account Customer"
-msgstr "Compte Auxiliaire Client"
-
-#. module: hubi
-#: model:ir.model.fields,field_description:hubi.field_res_partner_auxiliary_account_supplier
-#: model:ir.model.fields,field_description:hubi.field_res_users_auxiliary_account_supplier
-msgid "Auxiliary Account Supplier"
-msgstr "Compte Auxiliaire Fournisseur"
-
-#. module: hubi
-#: model:ir.model.fields,field_description:hubi.field_hubi_general_settings_auxiliary_accounting
-#: model:ir.model.fields,field_description:hubi.field_wiz_general_settings_auxiliary_accounting
-#: model:ir.ui.view,arch_db:hubi.wiz_general_settings_form
-msgid "Auxiliary Accounting"
-msgstr "Comptabilité Auxiliaire"
-
-#. module: hubi
 #: model:ir.ui.view,arch_db:hubi.report_partner_sheet_address
 msgid "BIC"
 msgstr "BIC"
@@ -588,35 +520,14 @@ msgid "Banks Accounts"
 msgstr "Comptes Bancaires"
 
 #. module: hubi
-#: model:ir.model.fields,field_description:hubi.field_wiz_create_print_label_code_barre
 #: model:ir.model.fields,field_description:hubi.field_wiz_sale_order_print_label_code_barre
-msgid "Bar Code"
-msgstr "Bar Code"
+msgid "Barre Code"
+msgstr "Code Barre"
 
 #. module: hubi
-#: model:ir.model.fields,field_description:hubi.field_wiz_create_print_label_code_128
-#: model:ir.model.fields,field_description:hubi.field_wiz_sale_order_print_label_code_128
-msgid "Bar Code 128"
-msgstr "Bar Code 128"
-
-#. module: hubi
-#: model:ir.model.fields,field_description:hubi.field_res_partner_compteur_ean128
-#: model:ir.model.fields,field_description:hubi.field_res_users_compteur_ean128
-msgid "Barcode 128 counter"
-msgstr "Barcode 128 compteur"
-
-#. module: hubi
-#: code:addons/hubi/models/inherited_product_template.py:133
-#, python-format
-msgid "Barcode EAN13 invalid. The key is "
-msgstr "Barcode EAN13 invalide. La clé est "
-
-#. module: hubi
-#: model:ir.model.fields,field_description:hubi.field_sale_order_line_no_lot
-#: model:ir.model.fields,field_description:hubi.field_wiz_create_print_label_numlot
-#: model:ir.model.fields,field_description:hubi.field_wiz_sale_order_print_label_numlot
-msgid "Batch number"
-msgstr "Numéro de lot"
+#: model:ir.model.fields,field_description:hubi.field_account_invoice_tax_base_discount
+msgid "Base Discount"
+msgstr "Montant Base Remise"
 
 #. module: hubi
 #: model:ir.model,name:hubi.model_mrp_bom
@@ -689,7 +600,6 @@ msgstr "CNUF"
 #: model:ir.model.fields,field_description:hubi.field_product_template_caliber_id
 #: model:ir.model.fields,field_description:hubi.field_product_template_family_id
 #: model:ir.model.fields,field_description:hubi.field_sale_order_line_caliber_id
-#: model:ir.model.fields,field_description:hubi.field_wiz_create_print_label_caliber_id
 #: model:ir.model.fields,field_description:hubi.field_wiz_create_product_from_category_caliber_id
 #: model:ir.model.fields,field_description:hubi.field_wiz_sale_order_print_label_caliber_name
 #: model:ir.model.fields,field_description:hubi.field_wiz_search_product_line_caliber_id
@@ -701,7 +611,6 @@ msgstr "CNUF"
 #: model:ir.ui.view,arch_db:hubi.product_template_search_view_hubi
 #: model:ir.ui.view,arch_db:hubi.report_invoice_document_hubi
 #: model:ir.ui.view,arch_db:hubi.report_saleorder_hubi_document
-#: model:ir.ui.view,arch_db:hubi.wiz_create_print_label
 msgid "Caliber"
 msgstr "Calibre"
 
@@ -728,14 +637,11 @@ msgstr "Calibre pour cette categorie"
 #: model:ir.ui.view,arch_db:hubi.search_product_wizard_form
 #: model:ir.ui.view,arch_db:hubi.wiz_confirm_dialog_form
 #: model:ir.ui.view,arch_db:hubi.wiz_create_invoiceperiod
-#: model:ir.ui.view,arch_db:hubi.wiz_create_print_label
 #: model:ir.ui.view,arch_db:hubi.wiz_create_productprice_step1
-#: model:ir.ui.view,arch_db:hubi.wiz_general_settings_form
 #: model:ir.ui.view,arch_db:hubi.wiz_prepare_creditnote
 #: model:ir.ui.view,arch_db:hubi.wiz_prepare_sale_order_print_label
 #: model:ir.ui.view,arch_db:hubi.wiz_print_label_sale_view
 #: model:ir.ui.view,arch_db:hubi.wiz_print_label_view
-#: model:ir.ui.view,arch_db:hubi.wiz_transfert_compta
 msgid "Cancel"
 msgstr "Annuler"
 
@@ -748,12 +654,6 @@ msgstr "Annuler"
 #: model:ir.ui.view,arch_db:hubi.report_invoice_document_hubi
 msgid "Cancelled Invoice"
 msgstr "Facture annulée"
-
-#. module: hubi
-#: model:ir.model.fields,field_description:hubi.field_wiz_create_print_label_caption_etiq
-#: model:ir.model.fields,field_description:hubi.field_wiz_sale_order_print_label_caption_etiq
-msgid "Caption label"
-msgstr "Intitulé étiquette"
 
 #. module: hubi
 #: model:ir.model,name:hubi.model_delivery_carrier
@@ -795,7 +695,6 @@ msgstr "Catégories - Produits"
 #: model:ir.ui.view,arch_db:hubi.report_product_sheet_price
 #: model:ir.ui.view,arch_db:hubi.report_saleorder_hubi_document
 #: model:ir.ui.view,arch_db:hubi.view_partner_establishment
-#: model:ir.ui.view,arch_db:hubi.wiz_create_print_label
 msgid "Category"
 msgstr "Catégorie"
 
@@ -803,18 +702,18 @@ msgstr "Catégorie"
 #: model:ir.ui.view,arch_db:hubi.hubi_product_category_form_inherited
 #: model:ir.ui.view,arch_db:hubi.view_product_category_caliber_form
 msgid "Category Caliber"
-msgstr "Catégorie Calibre"
+msgstr "Categorie Calibre"
 
 #. module: hubi
 #: model:ir.model.fields,field_description:hubi.field_sale_report_category_name
 #: model:ir.model.fields,field_description:hubi.field_wiz_create_product_from_category_categ_name
 msgid "Category Name"
-msgstr "Catégorie Nom"
+msgstr "Categorie Nom"
 
 #. module: hubi
 #: model:ir.model.fields,field_description:hubi.field_account_invoice_report_category_partner
 msgid "Category Partner"
-msgstr "Catégorie Client"
+msgstr "Categorie Client"
 
 #. module: hubi
 #: model:ir.model.fields,field_description:hubi.field_wiz_create_product_from_category_categ_reference
@@ -866,11 +765,9 @@ msgid "Click to register a transfer payment"
 msgstr "Cliquez pour enregistrer un transfert de paiement"
 
 #. module: hubi
-#: code:addons/hubi/reports/trial_balance_xlsx.py:24
 #: model:ir.model.fields,field_description:hubi.field_hubi_department_code
 #: model:ir.model.fields,field_description:hubi.field_hubi_labelmodel_code
 #: model:ir.model.fields,field_description:hubi.field_hubi_printer_code
-#, python-format
 msgid "Code"
 msgstr "Code"
 
@@ -885,12 +782,6 @@ msgstr "Code Message"
 #: model:ir.ui.view,arch_db:hubi.report_product_sheet_price
 msgid "Color"
 msgstr "Couleur"
-
-#. module: hubi
-#: model:ir.model.fields,field_description:hubi.field_wiz_create_print_label_color_etiq
-#: model:ir.model.fields,field_description:hubi.field_wiz_sale_order_print_label_color_etiq
-msgid "Color Etiq"
-msgstr "Coleur Etiquette"
 
 #. module: hubi
 #: model:ir.model.fields,field_description:hubi.field_sale_order_comment
@@ -915,14 +806,7 @@ msgid "Companies"
 msgstr "Sociétés"
 
 #. module: hubi
-#: model:ir.model.fields,field_description:hubi.field_hubi_family_company_id
-#: model:ir.model.fields,field_description:hubi.field_hubi_general_settings_company_id
-#: model:ir.model.fields,field_description:hubi.field_hubi_module_option_company_id
-#: model:ir.model.fields,field_description:hubi.field_hubi_palletization_company_id
-#: model:ir.model.fields,field_description:hubi.field_hubi_palletization_line_company_id
-#: model:ir.model.fields,field_description:hubi.field_hubi_payment_mode_company_id
 #: model:ir.model.fields,field_description:hubi.field_sale_report_carrier_company_id
-#: model:ir.model.fields,field_description:hubi.field_wiz_general_settings_company_id
 #: model:ir.ui.view,arch_db:hubi.search_establishment
 #: model:ir.ui.view,arch_db:hubi.search_res_partner_filter
 #: model:ir.ui.view,arch_db:hubi.view_hubi_saleorder_report_search
@@ -937,33 +821,6 @@ msgid "Company Etiquette"
 msgstr "Etiquette Société"
 
 #. module: hubi
-#: model:ir.model.fields,field_description:hubi.field_hubi_palletization_input_pallet_id
-msgid "Complete No Pallet"
-msgstr "Complète No Palette"
-
-#. module: hubi
-#: model:ir.model.fields,field_description:hubi.field_hubi_palletization_input_qty
-msgid "Complete Quantity"
-msgstr "Complète Quantité"
-
-#. module: hubi
-#: model:ir.model.fields,field_description:hubi.field_hubi_general_settings_complete_0_account_auxiliary
-#: model:ir.model.fields,field_description:hubi.field_wiz_general_settings_complete_0_account_auxiliary
-msgid "Complete right with 0 Account Auxiliary"
-msgstr "Complète à droite avec des 0 Compte Auxiliaire"
-
-#. module: hubi
-#: model:ir.model.fields,field_description:hubi.field_hubi_general_settings_complete_0_account_general
-#: model:ir.model.fields,field_description:hubi.field_wiz_general_settings_complete_0_account_general
-msgid "Complete right with 0 Account General"
-msgstr "Complète à droite avec des 0 Compte Général"
-
-#. module: hubi
-#: model:ir.ui.view,arch_db:hubi.hubi_palletization_form
-msgid "Complete_Pallet"
-msgstr "Complète_Palette"
-
-#. module: hubi
 #: model:ir.ui.menu,name:hubi.menu_hubi_components
 msgid "Component"
 msgstr "Composant"
@@ -976,7 +833,7 @@ msgstr "Configuration"
 #. module: hubi
 #: model:ir.ui.menu,name:hubi.menu_hubi_config_parameter
 msgid "Configuration Parameter"
-msgstr "Configuration Paramètre"
+msgstr "Configuration Parametre"
 
 #. module: hubi
 #: model:ir.actions.act_window,name:hubi.action_wiz_confirm_dialog
@@ -1064,12 +921,6 @@ msgid "Create Prices"
 msgstr "Création des Prix"
 
 #. module: hubi
-#: model:ir.actions.act_window,name:hubi.action_hubi_create_print_label
-#: model:ir.ui.view,arch_db:hubi.wiz_create_print_label
-msgid "Create Print Label"
-msgstr "Création Impression Etiquette"
-
-#. module: hubi
 #: model:ir.ui.view,arch_db:hubi.create_product_from_category_search
 msgid "Create Product"
 msgstr "Création Produit"
@@ -1084,11 +935,6 @@ msgstr "Création Produit à partir des Catégories"
 #: model:ir.ui.view,arch_db:hubi.hubi_sale_order_form_view
 msgid "Create Products"
 msgstr "Création Produits"
-
-#. module: hubi
-#: model:ir.ui.view,arch_db:hubi.wiz_create_print_label
-msgid "Create and Print Label"
-msgstr "Création et Impression des ériquettes"
 
 #. module: hubi
 #: model:ir.ui.view,arch_db:hubi.view_partner_establishment
@@ -1109,11 +955,6 @@ msgid "Create the price-list"
 msgstr "Création de la liste des prix"
 
 #. module: hubi
-#: model:ir.ui.view,arch_db:hubi.hubi_palletization_form
-msgid "Create_Pallet"
-msgstr "Création_Palette"
-
-#. module: hubi
 #: model:ir.ui.view,arch_db:hubi.create_product_from_category_form_view
 msgid "Create_Product"
 msgstr "Création Produit"
@@ -1121,22 +962,17 @@ msgstr "Création Produit"
 #. module: hubi
 #: model:ir.model.fields,field_description:hubi.field_hubi_department_create_uid
 #: model:ir.model.fields,field_description:hubi.field_hubi_family_create_uid
-#: model:ir.model.fields,field_description:hubi.field_hubi_general_settings_create_uid
 #: model:ir.model.fields,field_description:hubi.field_hubi_labelmodel_create_uid
 #: model:ir.model.fields,field_description:hubi.field_hubi_module_option_create_uid
-#: model:ir.model.fields,field_description:hubi.field_hubi_palletization_create_uid
-#: model:ir.model.fields,field_description:hubi.field_hubi_palletization_line_create_uid
-#: model:ir.model.fields,field_description:hubi.field_hubi_parameter_create_uid
 #: model:ir.model.fields,field_description:hubi.field_hubi_payment_mode_create_uid
 #: model:ir.model.fields,field_description:hubi.field_hubi_printer_create_uid
 #: model:ir.model.fields,field_description:hubi.field_hubi_product_category_caliber_create_uid
 #: model:ir.model.fields,field_description:hubi.field_hubi_product_customer_description_create_uid
 #: model:ir.model.fields,field_description:hubi.field_hubi_shipper_create_uid
+#: model:ir.model.fields,field_description:hubi.field_miadi_etiquette_parameter_create_uid
 #: model:ir.model.fields,field_description:hubi.field_wiz_confirm_dialog_create_uid_9502
-#: model:ir.model.fields,field_description:hubi.field_wiz_create_print_label_create_uid
 #: model:ir.model.fields,field_description:hubi.field_wiz_create_product_from_category_create_uid
 #: model:ir.model.fields,field_description:hubi.field_wiz_creditnote_create_uid
-#: model:ir.model.fields,field_description:hubi.field_wiz_general_settings_create_uid
 #: model:ir.model.fields,field_description:hubi.field_wiz_invoiceperiod_create_uid
 #: model:ir.model.fields,field_description:hubi.field_wiz_prepare_creditnote_create_uid
 #: model:ir.model.fields,field_description:hubi.field_wiz_print_label_create_uid
@@ -1145,29 +981,23 @@ msgstr "Création Produit"
 #: model:ir.model.fields,field_description:hubi.field_wiz_sale_order_print_label_create_uid
 #: model:ir.model.fields,field_description:hubi.field_wiz_search_product_create_uid
 #: model:ir.model.fields,field_description:hubi.field_wiz_search_product_line_create_uid
-#: model:ir.model.fields,field_description:hubi.field_wiz_transfertcompta_create_uid
 msgid "Created by"
 msgstr "Créé par"
 
 #. module: hubi
 #: model:ir.model.fields,field_description:hubi.field_hubi_department_create_date
 #: model:ir.model.fields,field_description:hubi.field_hubi_family_create_date
-#: model:ir.model.fields,field_description:hubi.field_hubi_general_settings_create_date
 #: model:ir.model.fields,field_description:hubi.field_hubi_labelmodel_create_date
 #: model:ir.model.fields,field_description:hubi.field_hubi_module_option_create_date
-#: model:ir.model.fields,field_description:hubi.field_hubi_palletization_create_date
-#: model:ir.model.fields,field_description:hubi.field_hubi_palletization_line_create_date
-#: model:ir.model.fields,field_description:hubi.field_hubi_parameter_create_date
 #: model:ir.model.fields,field_description:hubi.field_hubi_payment_mode_create_date
 #: model:ir.model.fields,field_description:hubi.field_hubi_printer_create_date
 #: model:ir.model.fields,field_description:hubi.field_hubi_product_category_caliber_create_date
 #: model:ir.model.fields,field_description:hubi.field_hubi_product_customer_description_create_date
 #: model:ir.model.fields,field_description:hubi.field_hubi_shipper_create_date
+#: model:ir.model.fields,field_description:hubi.field_miadi_etiquette_parameter_create_date
 #: model:ir.model.fields,field_description:hubi.field_wiz_confirm_dialog_create_date_9503
-#: model:ir.model.fields,field_description:hubi.field_wiz_create_print_label_create_date
 #: model:ir.model.fields,field_description:hubi.field_wiz_create_product_from_category_create_date
 #: model:ir.model.fields,field_description:hubi.field_wiz_creditnote_create_date
-#: model:ir.model.fields,field_description:hubi.field_wiz_general_settings_create_date
 #: model:ir.model.fields,field_description:hubi.field_wiz_invoiceperiod_create_date
 #: model:ir.model.fields,field_description:hubi.field_wiz_prepare_creditnote_create_date
 #: model:ir.model.fields,field_description:hubi.field_wiz_print_label_create_date
@@ -1176,7 +1006,6 @@ msgstr "Créé par"
 #: model:ir.model.fields,field_description:hubi.field_wiz_sale_order_print_label_create_date
 #: model:ir.model.fields,field_description:hubi.field_wiz_search_product_create_date
 #: model:ir.model.fields,field_description:hubi.field_wiz_search_product_line_create_date
-#: model:ir.model.fields,field_description:hubi.field_wiz_transfertcompta_create_date
 msgid "Created on"
 msgstr "Créé le"
 
@@ -1184,13 +1013,6 @@ msgstr "Créé le"
 #: model:ir.actions.act_window,name:hubi.action_wiz_confirm_dialog2
 msgid "Creation Credit note"
 msgstr "Création Avoir"
-
-#. module: hubi
-#: code:addons/hubi/reports/trial_balance_xlsx.py:34
-#: code:addons/hubi/reports/trial_balance_xlsx.py:54
-#, python-format
-msgid "Credit"
-msgstr "Crédit"
 
 #. module: hubi
 #: model:ir.ui.view,arch_db:hubi.report_invoice_document_hubi
@@ -1220,8 +1042,6 @@ msgid "Creditnote"
 msgstr "Avoir"
 
 #. module: hubi
-#: model:ir.model.fields,field_description:hubi.field_wiz_create_print_label_partner_id
-#: model:ir.model.fields,field_description:hubi.field_wiz_sale_order_print_label_partner_id
 #: model:ir.ui.menu,name:hubi.menu_hubi_customers
 #: model:ir.ui.view,arch_db:hubi.view_hubi_invoice_report_search
 #: model:ir.ui.view,arch_db:hubi.view_hubi_saleorder_report_search
@@ -1240,7 +1060,7 @@ msgstr "Facturation Client"
 #: model:ir.model.fields,field_description:hubi.field_res_users_company_city_etiq
 #: model:ir.model.fields,field_description:hubi.field_res_users_customer_city_etiq
 msgid "Customer City Etiq"
-msgstr "Ville affichée / Etiquette"
+msgstr "Ville client / Etiquette"
 
 #. module: hubi
 #: model:ir.model.fields,field_description:hubi.field_res_partner_customer_color_etiq
@@ -1269,7 +1089,7 @@ msgstr "Liste Clients"
 #: model:ir.model.fields,field_description:hubi.field_res_users_company_name_etiq
 #: model:ir.model.fields,field_description:hubi.field_res_users_customer_name_etiq
 msgid "Customer Name Etiq"
-msgstr "Nom affiché / Etiquette"
+msgstr "Nom client / Etiquette"
 
 #. module: hubi
 #: model:ir.model.fields,field_description:hubi.field_product_pricelist_item_customer_ref
@@ -1288,6 +1108,7 @@ msgstr "Etat Client détaillé"
 
 #. module: hubi
 #: model:ir.actions.act_window,name:hubi.action_hubi_partner_customer
+#: model:ir.ui.view,arch_db:hubi.search_establishment
 #: model:ir.ui.view,arch_db:hubi.search_res_partner_filter
 msgid "Customers"
 msgstr "Clients"
@@ -1362,19 +1183,6 @@ msgid "Date Start"
 msgstr "Date Début"
 
 #. module: hubi
-#: code:addons/hubi/reports/trial_balance_xlsx.py:66
-#, python-format
-msgid "Date range filter"
-msgstr "Filtre de plage de date"
-
-#. module: hubi
-#: code:addons/hubi/reports/trial_balance_xlsx.py:30
-#: code:addons/hubi/reports/trial_balance_xlsx.py:50
-#, python-format
-msgid "Debit"
-msgstr "Débit"
-
-#. module: hubi
 #: model:ir.model.fields,field_description:hubi.field_product_pricelist_item_default_price
 #: model:ir.ui.view,arch_db:hubi.pricelist_item_hubi_form_view
 msgid "Default Price"
@@ -1386,13 +1194,6 @@ msgid "Default Price Unit"
 msgstr "Prix Unit. par défaut"
 
 #. module: hubi
-#: model:ir.model.fields,field_description:hubi.field_hubi_palletization_default_pallet_qty
-#: model:ir.model.fields,field_description:hubi.field_product_product_default_pallet_qty
-#: model:ir.model.fields,field_description:hubi.field_product_template_default_pallet_qty
-msgid "Default Quantity on the Pallet"
-msgstr "Quantité par défaut sur la Palette"
-
-#. module: hubi
 #: model:ir.model.fields,field_description:hubi.field_hubi_family_default_value
 msgid "Default Value"
 msgstr "Valeur par défaut"
@@ -1400,12 +1201,7 @@ msgstr "Valeur par défaut"
 #. module: hubi
 #: model:ir.model.fields,help:hubi.field_product_pricelist_item_default_price
 msgid "Default price for this product."
-msgstr "Prix  par défaut pour ce produit."
-
-#. module: hubi
-#: model:ir.ui.view,arch_db:hubi.hubi_palletization_form
-msgid "Delete_Pallet"
-msgstr "Suppression_Palette"
+msgstr "prix  par défaut pour ce produit."
 
 #. module: hubi
 #: model:ir.actions.act_window,name:hubi.action_hubi_department
@@ -1450,7 +1246,7 @@ msgstr "Remise"
 #. module: hubi
 #: model:ir.model.fields,field_description:hubi.field_account_invoice_discount_rate
 msgid "Discount Amount"
-msgstr "Montant Remise"
+msgstr "Discount Amount"
 
 #. module: hubi
 #: model:ir.ui.view,arch_db:hubi.hubi_account_invoice_form_view
@@ -1493,23 +1289,18 @@ msgstr "Remise Type :"
 #. module: hubi
 #: model:ir.model.fields,field_description:hubi.field_hubi_department_display_name
 #: model:ir.model.fields,field_description:hubi.field_hubi_family_display_name
-#: model:ir.model.fields,field_description:hubi.field_hubi_general_settings_display_name
 #: model:ir.model.fields,field_description:hubi.field_hubi_labelmodel_display_name
 #: model:ir.model.fields,field_description:hubi.field_hubi_module_option_display_name
-#: model:ir.model.fields,field_description:hubi.field_hubi_palletization_display_name
-#: model:ir.model.fields,field_description:hubi.field_hubi_palletization_line_display_name
-#: model:ir.model.fields,field_description:hubi.field_hubi_parameter_display_name
 #: model:ir.model.fields,field_description:hubi.field_hubi_payment_mode_display_name
 #: model:ir.model.fields,field_description:hubi.field_hubi_printer_display_name
 #: model:ir.model.fields,field_description:hubi.field_hubi_product_category_caliber_display_name
 #: model:ir.model.fields,field_description:hubi.field_hubi_product_customer_description_display_name
 #: model:ir.model.fields,field_description:hubi.field_hubi_shipper_display_name
+#: model:ir.model.fields,field_description:hubi.field_miadi_etiquette_parameter_display_name
 #: model:ir.model.fields,field_description:hubi.field_sale_report_carrier_display_name
 #: model:ir.model.fields,field_description:hubi.field_wiz_confirm_dialog_display_name_9501
-#: model:ir.model.fields,field_description:hubi.field_wiz_create_print_label_display_name
 #: model:ir.model.fields,field_description:hubi.field_wiz_create_product_from_category_display_name
 #: model:ir.model.fields,field_description:hubi.field_wiz_creditnote_display_name
-#: model:ir.model.fields,field_description:hubi.field_wiz_general_settings_display_name
 #: model:ir.model.fields,field_description:hubi.field_wiz_invoiceperiod_display_name
 #: model:ir.model.fields,field_description:hubi.field_wiz_prepare_creditnote_display_name
 #: model:ir.model.fields,field_description:hubi.field_wiz_print_label_display_name_9776
@@ -1518,7 +1309,6 @@ msgstr "Remise Type :"
 #: model:ir.model.fields,field_description:hubi.field_wiz_sale_order_print_label_display_name
 #: model:ir.model.fields,field_description:hubi.field_wiz_search_product_display_name
 #: model:ir.model.fields,field_description:hubi.field_wiz_search_product_line_display_name
-#: model:ir.model.fields,field_description:hubi.field_wiz_transfertcompta_display_name
 msgid "Display Name"
 msgstr "Nom à afficher"
 
@@ -1545,7 +1335,7 @@ msgstr "Bon de Commande en brouillon"
 #. module: hubi
 #: model:ir.model,name:hubi.model_hubi_department
 msgid "Départment"
-msgstr "Départment"
+msgstr "Département"
 
 #. module: hubi
 #: model:ir.ui.view,arch_db:hubi.pricelist_hubi_form_view
@@ -1569,12 +1359,6 @@ msgstr "EAN128"
 #: model:ir.ui.view,arch_db:hubi.pricelist_item_hubi_form_view
 msgid "EAN13"
 msgstr "EAN13"
-
-#. module: hubi
-#: selection:hubi.general_settings,type_accounting:0
-#: selection:wiz.general_settings,type_accounting:0
-msgid "EBP"
-msgstr "EBP"
 
 #. module: hubi
 #: model:ir.ui.view,arch_db:hubi.view_partner_customer
@@ -1640,16 +1424,8 @@ msgstr "Courriel"
 #: model:ir.model.fields,field_description:hubi.field_wiz_invoiceperiod_date_end
 #: model:ir.model.fields,field_description:hubi.field_wiz_prepare_creditnote_date_end
 #: model:ir.model.fields,field_description:hubi.field_wiz_productprice_date_end
-#: model:ir.model.fields,field_description:hubi.field_wiz_transfertcompta_date_end
 msgid "End Date"
 msgstr "Date de fin"
-
-#. module: hubi
-#: code:addons/hubi/reports/trial_balance_xlsx.py:38
-#: code:addons/hubi/reports/trial_balance_xlsx.py:58
-#, python-format
-msgid "Ending balance"
-msgstr "Fin balance"
 
 #. module: hubi
 #: model:ir.model.fields,help:hubi.field_wiz_productprice_date_end
@@ -1663,7 +1439,6 @@ msgstr "Fin de validité pour la création des avoirs"
 
 #. module: hubi
 #: model:ir.model.fields,help:hubi.field_wiz_invoiceperiod_date_end
-#: model:ir.model.fields,help:hubi.field_wiz_transfertcompta_date_end
 msgid "Ending valid for the the creation of invoices"
 msgstr "Fin de validité pour la création des factures"
 
@@ -1702,8 +1477,6 @@ msgstr "Etiquette Marenne Oleron"
 #. module: hubi
 #: model:ir.model.fields,field_description:hubi.field_product_product_etiq_mention
 #: model:ir.model.fields,field_description:hubi.field_product_template_etiq_mention
-#: model:ir.model.fields,field_description:hubi.field_res_partner_etiq_mention
-#: model:ir.model.fields,field_description:hubi.field_res_users_etiq_mention
 msgid "Etiq Mention"
 msgstr "Etiquette Mention"
 
@@ -1711,7 +1484,7 @@ msgstr "Etiquette Mention"
 #: model:ir.model.fields,field_description:hubi.field_product_product_etiq_model_supple
 #: model:ir.model.fields,field_description:hubi.field_product_template_etiq_model_supple
 msgid "Etiq Model Supplementary"
-msgstr "Etiquette Modèle Supplèmentaire"
+msgstr "Etiquette Modèle Supplementaire"
 
 #. module: hubi
 #: model:ir.model.fields,field_description:hubi.field_product_pricelist_item_etiq_modele
@@ -1721,6 +1494,9 @@ msgid "Etiq Modele"
 msgstr "Etiquette Modèle"
 
 #. module: hubi
+#: model:ir.model.fields,field_description:hubi.field_product_pricelist_item_price_printer
+#: model:ir.model.fields,field_description:hubi.field_product_product_etiq_printer
+#: model:ir.model.fields,field_description:hubi.field_product_template_etiq_printer
 #: model:ir.model.fields,field_description:hubi.field_wiz_create_product_from_category_etiq_printer
 msgid "Etiq Printer"
 msgstr "Etiquette Imprimante"
@@ -1814,20 +1590,6 @@ msgid "File"
 msgstr "Fichier"
 
 #. module: hubi
-#: model:ir.model.fields,field_description:hubi.field_hubi_general_settings_account_file_transfer
-#: model:ir.model.fields,field_description:hubi.field_wiz_general_settings_account_file_transfer
-#: model:ir.model.fields,field_description:hubi.field_wiz_transfertcompta_account_file_transfer
-msgid "File For Account Transfer"
-msgstr "Fichier des comptes pour le Transfert Comptable"
-
-#. module: hubi
-#: model:ir.model.fields,field_description:hubi.field_hubi_general_settings_writing_file_transfer
-#: model:ir.model.fields,field_description:hubi.field_wiz_general_settings_writing_file_transfer
-#: model:ir.model.fields,field_description:hubi.field_wiz_transfertcompta_writing_file_transfer
-msgid "File For Writing Transfer"
-msgstr "Fichier des écritures pour le Transfert Comptable"
-
-#. module: hubi
 #: model:ir.model.fields,field_description:hubi.field_hubi_family_purchase_ok
 msgid "For Purchase"
 msgstr "Pour Achat"
@@ -1875,12 +1637,6 @@ msgid "From this report, you can have an overview of the weight invoiced to your
 msgstr "À partir de ce rapport, vous avez un aperçu des poids facturés à votre client. L'outil de recherche peut aussi être utilisé pour personnaliser l'analyse des factures, et ainsi mieux correspondre à vos besoins."
 
 #. module: hubi
-#: code:addons/hubi/reports/trial_balance_xlsx.py:67
-#, python-format
-msgid "From: %s To: %s"
-msgstr "De: %s A: %s"
-
-#. module: hubi
 #: selection:sale.report,invoice_status:0
 #: selection:sale.report.carrier,invoice_status:0
 msgid "Fully Invoiced"
@@ -1890,14 +1646,6 @@ msgstr "Facturé totalement"
 #: model:ir.ui.menu,name:hubi.menu_hubi_general_ledger
 msgid "General Ledger"
 msgstr "Grand livre"
-
-#. module: hubi
-#: model:ir.model,name:hubi.model_hubi_general_settings
-#: model:ir.model,name:hubi.model_wiz_general_settings
-#: model:ir.ui.menu,name:hubi.menu_hubi_general_settings
-#: model:ir.ui.view,arch_db:hubi.wiz_general_settings_form
-msgid "General Settings"
-msgstr "Paramètres généraux"
 
 #. module: hubi
 #: model:ir.model.fields,field_description:hubi.field_sale_report_carrier_weight
@@ -1933,7 +1681,6 @@ msgstr "HT"
 #. module: hubi
 #: model:ir.model.fields,field_description:hubi.field_res_partner_health_number
 #: model:ir.model.fields,field_description:hubi.field_res_users_health_number
-#: model:ir.model.fields,field_description:hubi.field_wiz_create_print_label_health_number
 msgid "Health Number"
 msgstr "Numéro Sanitaire"
 
@@ -1947,12 +1694,6 @@ msgid "Help"
 msgstr "Aide"
 
 #. module: hubi
-#: code:addons/hubi/reports/trial_balance_xlsx.py:72
-#, python-format
-msgid "Hide"
-msgstr "Caché"
-
-#. module: hubi
 #: model:ir.ui.menu,name:hubi.menu_hubi
 msgid "Hubi"
 msgstr "Hubi"
@@ -1960,23 +1701,18 @@ msgstr "Hubi"
 #. module: hubi
 #: model:ir.model.fields,field_description:hubi.field_hubi_department_id
 #: model:ir.model.fields,field_description:hubi.field_hubi_family_id
-#: model:ir.model.fields,field_description:hubi.field_hubi_general_settings_id
 #: model:ir.model.fields,field_description:hubi.field_hubi_labelmodel_id
 #: model:ir.model.fields,field_description:hubi.field_hubi_module_option_id
-#: model:ir.model.fields,field_description:hubi.field_hubi_palletization_id
-#: model:ir.model.fields,field_description:hubi.field_hubi_palletization_line_id
-#: model:ir.model.fields,field_description:hubi.field_hubi_parameter_id
 #: model:ir.model.fields,field_description:hubi.field_hubi_payment_mode_id
 #: model:ir.model.fields,field_description:hubi.field_hubi_printer_id
 #: model:ir.model.fields,field_description:hubi.field_hubi_product_category_caliber_id
 #: model:ir.model.fields,field_description:hubi.field_hubi_product_customer_description_id
 #: model:ir.model.fields,field_description:hubi.field_hubi_shipper_id
+#: model:ir.model.fields,field_description:hubi.field_miadi_etiquette_parameter_id
 #: model:ir.model.fields,field_description:hubi.field_sale_report_carrier_id
 #: model:ir.model.fields,field_description:hubi.field_wiz_confirm_dialog_id_9500
-#: model:ir.model.fields,field_description:hubi.field_wiz_create_print_label_id
 #: model:ir.model.fields,field_description:hubi.field_wiz_create_product_from_category_id
 #: model:ir.model.fields,field_description:hubi.field_wiz_creditnote_id
-#: model:ir.model.fields,field_description:hubi.field_wiz_general_settings_id
 #: model:ir.model.fields,field_description:hubi.field_wiz_invoiceperiod_id
 #: model:ir.model.fields,field_description:hubi.field_wiz_prepare_creditnote_id
 #: model:ir.model.fields,field_description:hubi.field_wiz_print_label_id
@@ -1984,7 +1720,6 @@ msgstr "Hubi"
 #: model:ir.model.fields,field_description:hubi.field_wiz_sale_order_print_label_id
 #: model:ir.model.fields,field_description:hubi.field_wiz_search_product_id
 #: model:ir.model.fields,field_description:hubi.field_wiz_search_product_line_id
-#: model:ir.model.fields,field_description:hubi.field_wiz_transfertcompta_id
 msgid "ID"
 msgstr "ID"
 
@@ -2039,13 +1774,11 @@ msgstr "Info"
 
 #. module: hubi
 #: model:ir.model.fields,field_description:hubi.field_wiz_confirm_dialog_confirm_message_9498
-#: model:ir.model.fields,field_description:hubi.field_wiz_create_print_label_message
 #: model:ir.model.fields,field_description:hubi.field_wiz_creditnote_note
 #: model:ir.model.fields,field_description:hubi.field_wiz_invoiceperiod_message
 #: model:ir.model.fields,field_description:hubi.field_wiz_prepare_creditnote_message
 #: model:ir.model.fields,field_description:hubi.field_wiz_productprice_message
 #: model:ir.model.fields,field_description:hubi.field_wiz_search_product_message
-#: model:ir.model.fields,field_description:hubi.field_wiz_transfertcompta_message
 #: model:ir.ui.view,arch_db:hubi.report_product_sheet_price
 #: model:ir.ui.view,arch_db:hubi.view_partner_customer
 #: model:ir.ui.view,arch_db:hubi.view_partner_establishment
@@ -2063,16 +1796,8 @@ msgid "Informations"
 msgstr "Informations"
 
 #. module: hubi
-#: code:addons/hubi/reports/trial_balance_xlsx.py:26
-#: code:addons/hubi/reports/trial_balance_xlsx.py:46
-#, python-format
-msgid "Initial balance"
-msgstr "Initial balance"
-
-#. module: hubi
 #: model:ir.model.fields,field_description:hubi.field_account_invoice_line_category_id
 #: model:ir.model.fields,field_description:hubi.field_sale_order_line_category_id
-#: model:ir.model.fields,field_description:hubi.field_wiz_create_print_label_category_id
 #: model:ir.model.fields,field_description:hubi.field_wiz_productprice_category_id
 msgid "Internal Category"
 msgstr "Catégorie interne"
@@ -2244,11 +1969,6 @@ msgid "Job"
 msgstr "Emploi"
 
 #. module: hubi
-#: model:ir.model,name:hubi.model_account_move_line
-msgid "Journal Item"
-msgstr "Écriture comptable"
-
-#. module: hubi
 #: model:ir.ui.menu,name:hubi.menu_hubi_account_moves_all
 msgid "Journal Items"
 msgstr "Écritures comptables"
@@ -2259,12 +1979,6 @@ msgid "Journal invoices with period in current year"
 msgstr "Ecritures de facturation avec une période sur l'exercice en cours"
 
 #. module: hubi
-#: model:ir.model.fields,field_description:hubi.field_wiz_transfertcompta_journal_ids
-#: model:ir.ui.view,arch_db:hubi.wiz_transfert_compta
-msgid "Journals"
-msgstr "Journaux"
-
-#. module: hubi
 #: model:ir.ui.menu,name:hubi.menu_hubi_print_journal
 msgid "Journals Audit"
 msgstr "Vérification Journaux"
@@ -2272,38 +1986,20 @@ msgstr "Vérification Journaux"
 #. module: hubi
 #: model:ir.model.fields,field_description:hubi.field_wiz_print_label_label_id_9774
 #: model:ir.model.fields,field_description:hubi.field_wiz_print_label_sale_label_id
+#: model:ir.model.fields,field_description:hubi.field_wiz_sale_order_print_label_label_id
 #: model:ir.ui.menu,name:hubi.menu_miadi_etiquette
 msgid "Label"
 msgstr "Etiquette"
 
 #. module: hubi
-#: model:ir.model.fields,field_description:hubi.field_wiz_create_print_label_label_id
-#: model:ir.model.fields,field_description:hubi.field_wiz_sale_order_print_label_label_id
 #: model:ir.ui.view,arch_db:hubi.miadi_etiquette_labelmodel_form
 msgid "Label Model"
 msgstr "Etiquette Modèle"
 
 #. module: hubi
-#: model:ir.model.fields,field_description:hubi.field_product_pricelist_item_price_printer
-#: model:ir.model.fields,field_description:hubi.field_product_product_etiq_printer
-#: model:ir.model.fields,field_description:hubi.field_product_template_etiq_printer
-#: model:ir.model.fields,field_description:hubi.field_res_partner_etiq_printer
-#: model:ir.model.fields,field_description:hubi.field_res_users_etiq_printer
-#: model:ir.model.fields,field_description:hubi.field_wiz_create_print_label_printer_id
-#: model:ir.model.fields,field_description:hubi.field_wiz_sale_order_print_label_printer_id
-msgid "Label Printer"
-msgstr "Imprimante Etiquette"
-
-#. module: hubi
 #: model:ir.actions.act_window,name:hubi.action_miadi_etiquette_labelmodel
 #: model:ir.model,name:hubi.model_hubi_labelmodel
 #: model:ir.model,name:hubi.model_miadi_etiquette_labelmodel
-#: model:ir.model.fields,field_description:hubi.field_hubi_parameter_label_model_id
-#: model:ir.model.fields,field_description:hubi.field_product_pricelist_item_label_model_id
-#: model:ir.model.fields,field_description:hubi.field_product_product_label_model_id
-#: model:ir.model.fields,field_description:hubi.field_product_template_label_model_id
-#: model:ir.model.fields,field_description:hubi.field_res_partner_label_model_id
-#: model:ir.model.fields,field_description:hubi.field_res_users_label_model_id
 #: model:ir.ui.menu,name:hubi.menu_miadi_etiquette_label_model
 msgid "Label model"
 msgstr "Etiquette modèle"
@@ -2319,30 +2015,20 @@ msgid "Label printer"
 msgstr "Imprimante Etiquette"
 
 #. module: hubi
-#: model:ir.model.fields,field_description:hubi.field_hubi_labelmodel_with_ean128
-msgid "Label with EAN128"
-msgstr "Etiquette avec EAN128"
-
-#. module: hubi
 #: model:ir.model.fields,field_description:hubi.field_hubi_department___last_update
 #: model:ir.model.fields,field_description:hubi.field_hubi_family___last_update
-#: model:ir.model.fields,field_description:hubi.field_hubi_general_settings___last_update
 #: model:ir.model.fields,field_description:hubi.field_hubi_labelmodel___last_update
 #: model:ir.model.fields,field_description:hubi.field_hubi_module_option___last_update
-#: model:ir.model.fields,field_description:hubi.field_hubi_palletization___last_update
-#: model:ir.model.fields,field_description:hubi.field_hubi_palletization_line___last_update
-#: model:ir.model.fields,field_description:hubi.field_hubi_parameter___last_update
 #: model:ir.model.fields,field_description:hubi.field_hubi_payment_mode___last_update
 #: model:ir.model.fields,field_description:hubi.field_hubi_printer___last_update
 #: model:ir.model.fields,field_description:hubi.field_hubi_product_category_caliber___last_update
 #: model:ir.model.fields,field_description:hubi.field_hubi_product_customer_description___last_update
 #: model:ir.model.fields,field_description:hubi.field_hubi_shipper___last_update
+#: model:ir.model.fields,field_description:hubi.field_miadi_etiquette_parameter___last_update
 #: model:ir.model.fields,field_description:hubi.field_sale_report_carrier___last_update
 #: model:ir.model.fields,field_description:hubi.field_wiz_confirm_dialog___last_update_9506
-#: model:ir.model.fields,field_description:hubi.field_wiz_create_print_label___last_update
 #: model:ir.model.fields,field_description:hubi.field_wiz_create_product_from_category___last_update
 #: model:ir.model.fields,field_description:hubi.field_wiz_creditnote___last_update
-#: model:ir.model.fields,field_description:hubi.field_wiz_general_settings___last_update
 #: model:ir.model.fields,field_description:hubi.field_wiz_invoiceperiod___last_update
 #: model:ir.model.fields,field_description:hubi.field_wiz_prepare_creditnote___last_update
 #: model:ir.model.fields,field_description:hubi.field_wiz_print_label___last_update_9781
@@ -2351,7 +2037,6 @@ msgstr "Etiquette avec EAN128"
 #: model:ir.model.fields,field_description:hubi.field_wiz_sale_order_print_label___last_update
 #: model:ir.model.fields,field_description:hubi.field_wiz_search_product___last_update
 #: model:ir.model.fields,field_description:hubi.field_wiz_search_product_line___last_update
-#: model:ir.model.fields,field_description:hubi.field_wiz_transfertcompta___last_update
 msgid "Last Modified on"
 msgstr "Dernière modification le"
 
@@ -2366,22 +2051,17 @@ msgstr "Le mois dernier"
 #. module: hubi
 #: model:ir.model.fields,field_description:hubi.field_hubi_department_write_uid
 #: model:ir.model.fields,field_description:hubi.field_hubi_family_write_uid
-#: model:ir.model.fields,field_description:hubi.field_hubi_general_settings_write_uid
 #: model:ir.model.fields,field_description:hubi.field_hubi_labelmodel_write_uid
 #: model:ir.model.fields,field_description:hubi.field_hubi_module_option_write_uid
-#: model:ir.model.fields,field_description:hubi.field_hubi_palletization_line_write_uid
-#: model:ir.model.fields,field_description:hubi.field_hubi_palletization_write_uid
-#: model:ir.model.fields,field_description:hubi.field_hubi_parameter_write_uid
 #: model:ir.model.fields,field_description:hubi.field_hubi_payment_mode_write_uid
 #: model:ir.model.fields,field_description:hubi.field_hubi_printer_write_uid
 #: model:ir.model.fields,field_description:hubi.field_hubi_product_category_caliber_write_uid
 #: model:ir.model.fields,field_description:hubi.field_hubi_product_customer_description_write_uid
 #: model:ir.model.fields,field_description:hubi.field_hubi_shipper_write_uid
+#: model:ir.model.fields,field_description:hubi.field_miadi_etiquette_parameter_write_uid
 #: model:ir.model.fields,field_description:hubi.field_wiz_confirm_dialog_write_uid_9504
-#: model:ir.model.fields,field_description:hubi.field_wiz_create_print_label_write_uid
 #: model:ir.model.fields,field_description:hubi.field_wiz_create_product_from_category_write_uid
 #: model:ir.model.fields,field_description:hubi.field_wiz_creditnote_write_uid
-#: model:ir.model.fields,field_description:hubi.field_wiz_general_settings_write_uid
 #: model:ir.model.fields,field_description:hubi.field_wiz_invoiceperiod_write_uid
 #: model:ir.model.fields,field_description:hubi.field_wiz_prepare_creditnote_write_uid
 #: model:ir.model.fields,field_description:hubi.field_wiz_print_label_sale_write_uid
@@ -2390,29 +2070,23 @@ msgstr "Le mois dernier"
 #: model:ir.model.fields,field_description:hubi.field_wiz_sale_order_print_label_write_uid
 #: model:ir.model.fields,field_description:hubi.field_wiz_search_product_line_write_uid
 #: model:ir.model.fields,field_description:hubi.field_wiz_search_product_write_uid
-#: model:ir.model.fields,field_description:hubi.field_wiz_transfertcompta_write_uid
 msgid "Last Updated by"
 msgstr "Dernière mise à jour par"
 
 #. module: hubi
 #: model:ir.model.fields,field_description:hubi.field_hubi_department_write_date
 #: model:ir.model.fields,field_description:hubi.field_hubi_family_write_date
-#: model:ir.model.fields,field_description:hubi.field_hubi_general_settings_write_date
 #: model:ir.model.fields,field_description:hubi.field_hubi_labelmodel_write_date
 #: model:ir.model.fields,field_description:hubi.field_hubi_module_option_write_date
-#: model:ir.model.fields,field_description:hubi.field_hubi_palletization_line_write_date
-#: model:ir.model.fields,field_description:hubi.field_hubi_palletization_write_date
-#: model:ir.model.fields,field_description:hubi.field_hubi_parameter_write_date
 #: model:ir.model.fields,field_description:hubi.field_hubi_payment_mode_write_date
 #: model:ir.model.fields,field_description:hubi.field_hubi_printer_write_date
 #: model:ir.model.fields,field_description:hubi.field_hubi_product_category_caliber_write_date
 #: model:ir.model.fields,field_description:hubi.field_hubi_product_customer_description_write_date
 #: model:ir.model.fields,field_description:hubi.field_hubi_shipper_write_date
+#: model:ir.model.fields,field_description:hubi.field_miadi_etiquette_parameter_write_date
 #: model:ir.model.fields,field_description:hubi.field_wiz_confirm_dialog_write_date_9505
-#: model:ir.model.fields,field_description:hubi.field_wiz_create_print_label_write_date
 #: model:ir.model.fields,field_description:hubi.field_wiz_create_product_from_category_write_date
 #: model:ir.model.fields,field_description:hubi.field_wiz_creditnote_write_date
-#: model:ir.model.fields,field_description:hubi.field_wiz_general_settings_write_date
 #: model:ir.model.fields,field_description:hubi.field_wiz_invoiceperiod_write_date
 #: model:ir.model.fields,field_description:hubi.field_wiz_prepare_creditnote_write_date
 #: model:ir.model.fields,field_description:hubi.field_wiz_print_label_sale_write_date
@@ -2421,21 +2095,8 @@ msgstr "Dernière mise à jour par"
 #: model:ir.model.fields,field_description:hubi.field_wiz_sale_order_print_label_write_date
 #: model:ir.model.fields,field_description:hubi.field_wiz_search_product_line_write_date
 #: model:ir.model.fields,field_description:hubi.field_wiz_search_product_write_date
-#: model:ir.model.fields,field_description:hubi.field_wiz_transfertcompta_write_date
 msgid "Last Updated on"
 msgstr "Dernière mise à jour le"
-
-#. module: hubi
-#: model:ir.model.fields,field_description:hubi.field_hubi_general_settings_length_account_auxiliary
-#: model:ir.model.fields,field_description:hubi.field_wiz_general_settings_length_account_auxiliary
-msgid "Length for Account Auxiliary"
-msgstr "Longueur du Compte Auxiliaire"
-
-#. module: hubi
-#: model:ir.model.fields,field_description:hubi.field_hubi_general_settings_length_account_general
-#: model:ir.model.fields,field_description:hubi.field_wiz_general_settings_length_account_general
-msgid "Length for Account General"
-msgstr "\"Longueur du Compte Général"
 
 #. module: hubi
 #: model:ir.model.fields,field_description:hubi.field_hubi_family_level
@@ -2495,9 +2156,20 @@ msgstr "Emplacements"
 #. module: hubi
 #: model:ir.model.fields,field_description:hubi.field_delivery_carrier_mail
 #: model:ir.model.fields,field_description:hubi.field_hubi_shipper_mail
-#: model:ir.model.fields,field_description:hubi.field_wiz_transfertcompta_template_id
 msgid "Mail"
 msgstr "Mail"
+
+#. module: hubi
+#: model:ir.model.fields,field_description:hubi.field_res_partner_main_collective_customer
+#: model:ir.model.fields,field_description:hubi.field_res_users_main_collective_customer
+msgid "Main Collective Customer"
+msgstr "Collectif Client"
+
+#. module: hubi
+#: model:ir.model.fields,field_description:hubi.field_res_partner_main_collective_supplier
+#: model:ir.model.fields,field_description:hubi.field_res_users_main_collective_supplier
+msgid "Main Collective Supplier"
+msgstr "Collectif Fournisseur"
 
 #. module: hubi
 #: model:ir.model.fields,field_description:hubi.field_hubi_family_main_level
@@ -2515,20 +2187,9 @@ msgid "Master Datas"
 msgstr "Structure des Données"
 
 #. module: hubi
-#: model:ir.ui.view,arch_db:hubi.hubi_palletization_form
-msgid "Max Quantity"
-msgstr "Quantité Max."
-
-#. module: hubi
 #: model:ir.ui.view,arch_db:hubi.report_product_sheet_price
 msgid "Min Quantity"
 msgstr "Quantité Min."
-
-#. module: hubi
-#: model:ir.model.fields,field_description:hubi.field_wiz_create_print_label_nb_mini
-#: model:ir.model.fields,field_description:hubi.field_wiz_sale_order_print_label_nb_mini
-msgid "Minimum number"
-msgstr "Nombre Minimum"
 
 #. module: hubi
 #: model:ir.ui.view,arch_db:hubi.view_partner_establishment
@@ -2570,7 +2231,7 @@ msgstr "Module des options."
 #. module: hubi
 #: model:ir.actions.act_window,help:hubi.action_miadi_etiquette_parameter
 msgid "Module parameters"
-msgstr "Module paramètres"
+msgstr "Module parametres"
 
 #. module: hubi
 #: model:ir.actions.act_window,name:hubi.action_hubi_module_option
@@ -2585,7 +2246,7 @@ msgstr "Module_option"
 #. module: hubi
 #: model:ir.model,name:hubi.model_hubi_module_option
 msgid "Modules - Options"
-msgstr "Hubi - Modules - Options"
+msgstr "Modules - Options"
 
 #. module: hubi
 #: selection:res.partner,discount_period_ca:0
@@ -2621,25 +2282,17 @@ msgstr "NAF"
 #: model:ir.model.fields,field_description:hubi.field_hubi_family_name
 #: model:ir.model.fields,field_description:hubi.field_hubi_labelmodel_name
 #: model:ir.model.fields,field_description:hubi.field_hubi_module_option_name
-#: model:ir.model.fields,field_description:hubi.field_hubi_palletization_line_name
-#: model:ir.model.fields,field_description:hubi.field_hubi_palletization_name
-#: model:ir.model.fields,field_description:hubi.field_hubi_parameter_name
 #: model:ir.model.fields,field_description:hubi.field_hubi_payment_mode_name
 #: model:ir.model.fields,field_description:hubi.field_hubi_printer_name
 #: model:ir.model.fields,field_description:hubi.field_hubi_shipper_name
+#: model:ir.model.fields,field_description:hubi.field_miadi_etiquette_parameter_name
 #: model:ir.model.fields,field_description:hubi.field_wiz_creditnote_name
 #: model:ir.ui.view,arch_db:hubi.report_partner_list_address
 #: model:ir.ui.view,arch_db:hubi.report_partner_sheet_address
 #: model:ir.ui.view,arch_db:hubi.view_establishment_tree
 #: model:ir.ui.view,arch_db:hubi.view_partner_establishment
-#: model:ir.ui.view,arch_db:hubi.wiz_general_settings_form
 msgid "Name"
 msgstr "Nom"
-
-#. module: hubi
-#: sql_constraint:hubi.general_settings:0
-msgid "Name must be unique for the company"
-msgstr "Nom doit être unique pour cette société"
 
 #. module: hubi
 #: model:ir.ui.view,arch_db:hubi.hubi_department_form
@@ -2659,7 +2312,7 @@ msgstr "Nom du modèle Imprimante"
 #. module: hubi
 #: model:ir.ui.view,arch_db:hubi.miadi_etiquette_parameter_form
 msgid "Name of the parameter"
-msgstr "Nom du paramètre"
+msgstr "Nom du parametre"
 
 #. module: hubi
 #: model:ir.ui.view,arch_db:hubi.miadi_etiquette_printer_form
@@ -2672,9 +2325,9 @@ msgid "Name of the shipper"
 msgstr "Nom du transporteur"
 
 #. module: hubi
-#: model:ir.ui.view,arch_db:hubi.hubi_palletization_form
-msgid "New_Pallet"
-msgstr "Nouvelle_Palette"
+#: model:ir.model.fields,field_description:hubi.field_wiz_sale_order_print_label_nb_mini
+msgid "Nb Mini"
+msgstr "Nb Mini"
 
 #. module: hubi
 #: model:ir.ui.view,arch_db:hubi.moduleoption_search
@@ -2685,7 +2338,7 @@ msgstr "Non Active"
 #. module: hubi
 #: model:ir.ui.view,arch_db:hubi.product_template_search_view_hubi
 msgid "No Components"
-msgstr "Sans Composant"
+msgstr "Sans Composants"
 
 #. module: hubi
 #: model:ir.ui.view,arch_db:hubi.hubi_module_form
@@ -2777,11 +2430,6 @@ msgid "Order Code_EAN"
 msgstr "Commande Code_EAN"
 
 #. module: hubi
-#: model:ir.ui.view,arch_db:hubi.hubi_palletization_form
-msgid "Order Lines"
-msgstr "Lignes de la commande"
-
-#. module: hubi
 #: model:ir.ui.view,arch_db:hubi.view_hubi_saleorder_report_search
 #: model:ir.ui.view,arch_db:hubi.view_hubi_saleorder_report_search_carrier
 msgid "Order Month"
@@ -2794,13 +2442,6 @@ msgid "Order Name"
 msgstr "Commande Nom"
 
 #. module: hubi
-#: model:ir.model.fields,field_description:hubi.field_hubi_palletization_uom_qty
-msgid "Order Quantity"
-msgstr "Quantité Commande"
-
-#. module: hubi
-#: model:ir.model.fields,field_description:hubi.field_hubi_palletization_line_order_id
-#: model:ir.model.fields,field_description:hubi.field_hubi_palletization_order_id
 #: model:ir.model.fields,field_description:hubi.field_sale_report_carrier_name_9782
 msgid "Order Reference"
 msgstr "Référence commande"
@@ -2816,19 +2457,10 @@ msgid "Order line"
 msgstr "Commande ligne"
 
 #. module: hubi
-#: model:ir.ui.view,arch_db:hubi.hubi_palletization_form
-msgid "Ordered Qty"
-msgstr "Qté commandée"
-
-#. module: hubi
 #: model:ir.ui.view,arch_db:hubi.view_hubi_saleorder_report_search
+#: model:ir.ui.view,arch_db:hubi.view_hubi_saleorder_report_search_carrier
 msgid "Ordered date of the sales order"
 msgstr "Date de commande du bon de commande"
-
-#. module: hubi
-#: model:ir.ui.view,arch_db:hubi.view_hubi_saleorder_report_search_carrier
-msgid "Ordered sending_date of the sales order"
-msgstr "Ordered sending_date of the sales order"
 
 #. module: hubi
 #: model:ir.ui.menu,name:hubi.menu_hubi_sale_orders_invoice
@@ -2860,7 +2492,6 @@ msgstr "PRO-FORMA Invoice / HUBI"
 #: model:ir.model.fields,field_description:hubi.field_product_product_packaging_id
 #: model:ir.model.fields,field_description:hubi.field_product_template_packaging_id
 #: model:ir.model.fields,field_description:hubi.field_sale_order_line_packaging_id
-#: model:ir.model.fields,field_description:hubi.field_wiz_create_print_label_packaging_id
 #: model:ir.model.fields,field_description:hubi.field_wiz_create_product_from_category_packaging_id
 #: model:ir.model.fields,field_description:hubi.field_wiz_sale_order_print_label_packaging_name
 #: model:ir.ui.view,arch_db:hubi.create_product_from_category_search
@@ -2869,7 +2500,6 @@ msgstr "PRO-FORMA Invoice / HUBI"
 #: model:ir.ui.view,arch_db:hubi.hubi_sale_order_form_view
 #: model:ir.ui.view,arch_db:hubi.report_invoice_document_hubi
 #: model:ir.ui.view,arch_db:hubi.report_saleorder_hubi_document
-#: model:ir.ui.view,arch_db:hubi.wiz_create_print_label
 msgid "Packaging"
 msgstr "Conditionnement"
 
@@ -2892,7 +2522,6 @@ msgid "Packaging Reference"
 msgstr "Emballage Référence"
 
 #. module: hubi
-#: model:ir.model.fields,field_description:hubi.field_wiz_create_print_label_packaging_date
 #: model:ir.model.fields,field_description:hubi.field_wiz_sale_order_print_label_packaging_date
 msgid "Packaging date"
 msgstr "Emballage date"
@@ -2909,51 +2538,12 @@ msgid "Pallet Description"
 msgstr "Palette Description"
 
 #. module: hubi
-#: model:ir.model.fields,field_description:hubi.field_hubi_palletization_line_pallet_no
-msgid "Pallet Number"
-msgstr "Palette Numéro"
-
-#. module: hubi
-#: model:ir.model,name:hubi.model_hubi_palletization
-#: model:ir.ui.view,arch_db:hubi.hubi_palletization_form
-#: model:ir.ui.view,arch_db:hubi.hubi_sale_order_form_view
-msgid "Palletization"
-msgstr "Palettisation"
-
-#. module: hubi
-#: model:ir.model,name:hubi.model_hubi_palletization_line
-msgid "Palletization Line"
-msgstr "Palettisation Ligne"
-
-#. module: hubi
-#: model:ir.model.fields,field_description:hubi.field_sale_order_palletization_ids
-#: model:ir.ui.view,arch_db:hubi.hubi_palletization_form
-msgid "Palletization Lines"
-msgstr "Palettisation Lignes"
-
-#. module: hubi
-#: model:ir.model.fields,field_description:hubi.field_sale_order_palletization_line_ids
-msgid "Palletization Pallets"
-msgstr "Palettisation Palettes"
-
-#. module: hubi
-#: model:ir.model.fields,field_description:hubi.field_hubi_palletization_line_palletization_id
-msgid "Palletization Reference"
-msgstr "Palettisation Référence"
-
-#. module: hubi
-#: model:ir.ui.view,arch_db:hubi.hubi_palletization_form
-msgid "Palletization for the Order :"
-msgstr "Palettisation pour la Commande :"
-
-#. module: hubi
 #: model:ir.actions.act_window,name:hubi.action_miadi_etiquette_parameter
 #: model:ir.ui.view,arch_db:hubi.miadi_etiquette_parameter_form
 msgid "Parameter"
-msgstr "Paramètre"
+msgstr "Parametre"
 
 #. module: hubi
-#: model:ir.model,name:hubi.model_hubi_parameter
 #: model:ir.model,name:hubi.model_miadi_etiquette_parameter
 #: model:ir.ui.menu,name:hubi.menu_miadi_etiquette_parameter
 msgid "Parameters"
@@ -2970,14 +2560,12 @@ msgid "Parent Product"
 msgstr "Produit Parent"
 
 #. module: hubi
-#: code:addons/hubi/reports/trial_balance_xlsx.py:45
 #: selection:hubi.family,main_level:0
 #: model:ir.model.fields,field_description:hubi.field_hubi_product_customer_description_partner_id
 #: model:ir.model.fields,field_description:hubi.field_sale_report_carrier_partner_id
 #: model:ir.model.fields,field_description:hubi.field_wiz_creditnote_partner_id
 #: model:ir.ui.view,arch_db:hubi.view_hubi_creditnote_filter
 #: model:ir.ui.view,arch_db:hubi.view_hubi_invoice_report_search
-#, python-format
 msgid "Partner"
 msgstr "Partenaire"
 
@@ -3004,7 +2592,7 @@ msgstr "Partenaire Nom"
 #. module: hubi
 #: model:ir.model,name:hubi.model_hubi_family
 msgid "Partner family"
-msgstr "Partenaire famille"
+msgstr "Partenaire Famille"
 
 #. module: hubi
 #: model:ir.ui.view,arch_db:hubi.view_hubi_saleorder_report_search
@@ -3021,18 +2609,6 @@ msgstr "Partenaire(s) Numéro :"
 #: model:ir.ui.menu,name:hubi.menu_hubi_datas_partner
 msgid "Partners"
 msgstr "Partenaires"
-
-#. module: hubi
-#: model:ir.ui.view,arch_db:hubi.wiz_transfert_compta
-msgid "Path"
-msgstr "Chemin"
-
-#. module: hubi
-#: model:ir.model.fields,field_description:hubi.field_hubi_general_settings_path_account_transfer
-#: model:ir.model.fields,field_description:hubi.field_wiz_general_settings_path_account_transfer
-#: model:ir.model.fields,field_description:hubi.field_wiz_transfertcompta_path_account_transfer
-msgid "Path For Account Transfer"
-msgstr "Chemin pour le Transfert Comptable"
 
 #. module: hubi
 #: model:ir.model.fields,help:hubi.field_hubi_labelmodel_file
@@ -3101,11 +2677,6 @@ msgid "Period Discount CA"
 msgstr "Périodicité Remise CA"
 
 #. module: hubi
-#: model:ir.ui.view,arch_db:hubi.wiz_transfert_compta
-msgid "Periods"
-msgstr "Périodes"
-
-#. module: hubi
 #: model:ir.ui.view,arch_db:hubi.search_res_partner_filter
 msgid "Persons"
 msgstr "Personnes"
@@ -3131,7 +2702,7 @@ msgstr "Téléphone :"
 #. module: hubi
 #: model:ir.model.fields,field_description:hubi.field_wiz_sale_order_print_label_sale_order_num
 msgid "Piece"
-msgstr "Pièce"
+msgstr "Piece"
 
 #. module: hubi
 #: model:ir.model.fields,field_description:hubi.field_hubi_printer_port
@@ -3251,7 +2822,6 @@ msgid "Print"
 msgstr "Imprimer"
 
 #. module: hubi
-#: model:ir.ui.menu,name:hubi.menu_hubi_sales_print_label
 #: model:ir.ui.view,arch_db:hubi.wiz_prepare_sale_order_print_label
 msgid "Print Label"
 msgstr "Imprimer Etiquette"
@@ -3273,9 +2843,9 @@ msgstr "Imprimer Etiquette"
 #: model:ir.actions.act_window,name:hubi.action_miadi_etiquette_printer
 #: model:ir.model,name:hubi.model_hubi_printer
 #: model:ir.model,name:hubi.model_miadi_etiquette_printer
-#: model:ir.model.fields,field_description:hubi.field_hubi_parameter_printer_id
 #: model:ir.model.fields,field_description:hubi.field_wiz_print_label_printer_id_9773
 #: model:ir.model.fields,field_description:hubi.field_wiz_print_label_sale_printer_id
+#: model:ir.model.fields,field_description:hubi.field_wiz_sale_order_print_label_printer_id
 #: model:ir.ui.view,arch_db:hubi.miadi_etiquette_printer_form
 #: model:ir.ui.view,arch_db:hubi.pricelist_item_hubi_form_view
 msgid "Printer"
@@ -3290,15 +2860,10 @@ msgstr "Imprimantes"
 
 #. module: hubi
 #: selection:hubi.family,main_level:0
-#: model:ir.model,name:hubi.model_product_product
-#: model:ir.model.fields,field_description:hubi.field_hubi_palletization_line_product_id
-#: model:ir.model.fields,field_description:hubi.field_hubi_palletization_product_id
-#: model:ir.model.fields,field_description:hubi.field_wiz_create_print_label_product_id
 #: model:ir.model.fields,field_description:hubi.field_wiz_sale_order_print_label_product_name
 #: model:ir.model.fields,field_description:hubi.field_wiz_search_product_line_product_id
 #: model:ir.ui.menu,name:hubi.menu_hubi_all_products
 #: model:ir.ui.menu,name:hubi.menu_hubi_products
-#: model:ir.ui.view,arch_db:hubi.hubi_palletization_form
 #: model:ir.ui.view,arch_db:hubi.view_hubi_module_tree
 msgid "Product"
 msgstr "Article"
@@ -3399,7 +2964,6 @@ msgstr "Qté à facturer"
 #. module: hubi
 #: model:ir.model.fields,field_description:hubi.field_product_product_quantity
 #: model:ir.model.fields,field_description:hubi.field_product_template_quantity
-#: model:ir.model.fields,field_description:hubi.field_wiz_create_print_label_qte
 #: model:ir.model.fields,field_description:hubi.field_wiz_create_product_from_category_quantity
 #: model:ir.model.fields,field_description:hubi.field_wiz_creditnote_quantity
 #: model:ir.model.fields,field_description:hubi.field_wiz_sale_order_print_label_qte
@@ -3409,12 +2973,6 @@ msgstr "Qté à facturer"
 #: model:ir.ui.view,arch_db:hubi.report_saleorder_hubi_document
 msgid "Quantity"
 msgstr "Quantité"
-
-#. module: hubi
-#: model:ir.model.fields,field_description:hubi.field_hubi_palletization_line_quantity
-#: model:ir.model.fields,field_description:hubi.field_hubi_palletization_pallet_qty
-msgid "Quantity on the Pallet"
-msgstr "Quantité sur la Palette"
 
 #. module: hubi
 #: selection:res.partner,discount_period_ca:0
@@ -3486,7 +3044,7 @@ msgstr "Référence"
 #. module: hubi
 #: model:ir.model,name:hubi.model_account_register_payments
 msgid "Register payments on multiple invoices"
-msgstr "Enregistrer des paiements sur plusieurs factures"
+msgstr "Enregistrez des paiements sur plusieurs factures"
 
 #. module: hubi
 #: model:ir.model.fields,field_description:hubi.field_product_product_remote_operation
@@ -3519,11 +3077,6 @@ msgid "Reserved establishment priority"
 msgstr "Expéditeur Réservé en priorité"
 
 #. module: hubi
-#: model:ir.model.fields,field_description:hubi.field_hubi_palletization_residual_qty
-msgid "Residual Quantity"
-msgstr "Quantité Résiduelle"
-
-#. module: hubi
 #: model:ir.ui.view,arch_db:hubi.view_partner_customer
 msgid "Responsable"
 msgstr "Responsable"
@@ -3532,18 +3085,6 @@ msgstr "Responsable"
 #: model:ir.ui.view,arch_db:hubi.search_product_wizard_form
 msgid "Return Product"
 msgstr "Retour Produit"
-
-#. module: hubi
-#: model:ir.model.fields,field_description:hubi.field_hubi_general_settings_root_account_auxiliary_customer
-#: model:ir.model.fields,field_description:hubi.field_wiz_general_settings_root_account_auxiliary_customer
-msgid "Root Account Auxiliary Customer"
-msgstr "Racine Compte Auxiliaire Client"
-
-#. module: hubi
-#: model:ir.model.fields,field_description:hubi.field_hubi_general_settings_root_account_auxiliary_supplier
-#: model:ir.model.fields,field_description:hubi.field_wiz_general_settings_root_account_auxiliary_supplier
-msgid "Root Account Auxiliary Supplier"
-msgstr "Racine Compte Auxiliaire Fournisseur"
 
 #. module: hubi
 #: model:ir.ui.view,arch_db:hubi.view_partner_establishment
@@ -3620,11 +3161,6 @@ msgstr "Bon de Commande"
 #: model:ir.model,name:hubi.model_sale_order_line
 msgid "Sales Order Line"
 msgstr "Ligne de bons de commande"
-
-#. module: hubi
-#: model:ir.ui.view,arch_db:hubi.hubi_palletization_form
-msgid "Sales Order Lines"
-msgstr "Lignes de bons de commande"
 
 #. module: hubi
 #: model:ir.ui.menu,name:hubi.menu_hubi_sale_orders
@@ -3708,15 +3244,8 @@ msgid "Sellable Product"
 msgstr "Produit Vendable"
 
 #. module: hubi
-#: model:ir.ui.view,arch_db:hubi.wiz_transfert_compta
-msgid "Send Mail"
-msgstr "Envoie EMail"
-
-#. module: hubi
 #: model:ir.model.fields,field_description:hubi.field_res_partner_sender_establishment
 #: model:ir.model.fields,field_description:hubi.field_res_users_sender_establishment
-#: model:ir.model.fields,field_description:hubi.field_wiz_create_print_label_etabexp_id
-#: model:ir.model.fields,field_description:hubi.field_wiz_sale_order_print_label_etabexp_id
 msgid "Sender establishment"
 msgstr "Etablissement Expéditeur"
 
@@ -3729,13 +3258,11 @@ msgid "Sending Date"
 msgstr "Date Envoi"
 
 #. module: hubi
-#: model:ir.model.fields,field_description:hubi.field_wiz_create_print_label_sending_date
 #: model:ir.model.fields,field_description:hubi.field_wiz_sale_order_print_label_sending_date
 msgid "Sending date"
 msgstr "Date envoi"
 
 #. module: hubi
-#: model:ir.actions.act_window,name:hubi.action_hubi_general_setting
 #: model:ir.ui.menu,name:hubi.menu_miadi_etiquette_settings
 msgid "Settings"
 msgstr "Configuration"
@@ -3777,12 +3304,6 @@ msgid "Shipping Price Kg"
 msgstr "Transport Prix Kg"
 
 #. module: hubi
-#: code:addons/hubi/reports/trial_balance_xlsx.py:72
-#, python-format
-msgid "Show"
-msgstr "Voir"
-
-#. module: hubi
 #: model:ir.ui.view,arch_db:hubi.report_partner_list_address
 msgid "Society"
 msgstr "Société"
@@ -3797,15 +3318,8 @@ msgstr "Document d'origine"
 #: model:ir.model.fields,field_description:hubi.field_wiz_invoiceperiod_date_start
 #: model:ir.model.fields,field_description:hubi.field_wiz_prepare_creditnote_date_start
 #: model:ir.model.fields,field_description:hubi.field_wiz_productprice_date_start
-#: model:ir.model.fields,field_description:hubi.field_wiz_transfertcompta_date_start
 msgid "Start Date"
 msgstr "Date de début"
-
-#. module: hubi
-#: model:ir.model.fields,field_description:hubi.field_res_partner_code_ean128
-#: model:ir.model.fields,field_description:hubi.field_res_users_code_ean128
-msgid "Start of barcode 128"
-msgstr "Début du barcode 128"
 
 #. module: hubi
 #: model:ir.model.fields,help:hubi.field_wiz_prepare_creditnote_date_start
@@ -3814,7 +3328,6 @@ msgstr "Date de début pour la création des avoirs"
 
 #. module: hubi
 #: model:ir.model.fields,help:hubi.field_wiz_invoiceperiod_date_start
-#: model:ir.model.fields,help:hubi.field_wiz_transfertcompta_date_start
 msgid "Starting date for the creation of invoices"
 msgstr "Date de début pour la création des factures"
 
@@ -3863,7 +3376,6 @@ msgstr "Rue..."
 #. module: hubi
 #: model:ir.ui.view,arch_db:hubi.view_hubi_saleorder_report_daily_tree
 #: model:ir.ui.view,arch_db:hubi.view_hubi_saleorder_report_delivery_tree
-#: model:ir.ui.view,arch_db:hubi.view_hubi_saleorder_report_reference_tree
 msgid "Subtotal Price HT"
 msgstr "Sous-total Prix HT"
 
@@ -3883,12 +3395,6 @@ msgid "Summary Delivery"
 msgstr "Récapitulatif Livraison"
 
 #. module: hubi
-#: model:ir.ui.menu,name:hubi.menu_hubi_sale_order_report_reference
-#: model:ir.ui.view,arch_db:hubi.view_hubi_saleorder_reference_report_pivot
-msgid "Summary Invoice Order"
-msgstr "Récapitulatif Facture"
-
-#. module: hubi
 #: model:ir.ui.menu,name:hubi.menu_hubi_sale_order_report_weight
 msgid "Summary Weight"
 msgstr "Récapitulatif Poids"
@@ -3899,7 +3405,6 @@ msgid "Supplier Billing"
 msgstr "Facturation Fournisseur"
 
 #. module: hubi
-#: model:ir.actions.act_window,name:hubi.action_hubi_partner_supplier
 #: model:ir.ui.menu,name:hubi.menu_hubi_suppliers
 msgid "Suppliers"
 msgstr "Fournisseurs"
@@ -3929,12 +3434,6 @@ msgstr "Étiquette"
 #: model:ir.ui.view,arch_db:hubi.view_partner_establishment
 msgid "Tags..."
 msgstr "Étiquettes..."
-
-#. module: hubi
-#: code:addons/hubi/reports/trial_balance_xlsx.py:68
-#, python-format
-msgid "Target moves filter"
-msgstr "Filtre de mouvement Cible"
 
 #. module: hubi
 #: selection:product.pricelist.item,etiq_modele:0
@@ -3977,7 +3476,6 @@ msgstr "Test"
 #: model:ir.model.fields,help:hubi.field_product_template_caliber_id
 #: model:ir.model.fields,help:hubi.field_product_template_family_id
 #: model:ir.model.fields,help:hubi.field_sale_order_line_caliber_id
-#: model:ir.model.fields,help:hubi.field_wiz_create_print_label_caliber_id
 msgid "The Caliber of the product."
 msgstr "Le Calibre du produit."
 
@@ -3994,27 +3492,8 @@ msgstr "La Couleur est"
 #: model:ir.model.fields,help:hubi.field_product_product_packaging_id
 #: model:ir.model.fields,help:hubi.field_product_template_packaging_id
 #: model:ir.model.fields,help:hubi.field_sale_order_line_packaging_id
-#: model:ir.model.fields,help:hubi.field_wiz_create_print_label_packaging_id
 msgid "The Packaging of the product."
 msgstr "Emballage du produit."
-
-#. module: hubi
-#: code:addons/hubi/models/table_base.py:90
-#, python-format
-msgid "The chosen company is not in the allowed companies for this family"
-msgstr "La société choisie n'est pas autorisée pour cette famille"
-
-#. module: hubi
-#: code:addons/hubi/models/module_option.py:35
-#, python-format
-msgid "The chosen company is not in the allowed companies for this module option"
-msgstr "La société choisie n'est pas autorisée pour ce module option"
-
-#. module: hubi
-#: code:addons/hubi/models/inherited_product_template.py:186
-#, python-format
-msgid "The chosen company is not in the allowed companies for this product"
-msgstr "La société choisie n'est pas autorisée pour ce produit"
 
 #. module: hubi
 #: model:ir.model.fields,help:hubi.field_res_partner_family_id
@@ -4035,22 +3514,20 @@ msgid "The type of the partner."
 msgstr "Le type du partenaire."
 
 #. module: hubi
-#: code:addons/hubi/models/wiz_create_creditnote_ca.py:230
-#: code:addons/hubi/models/wiz_delevery_slip.py:221
+#: code:addons/hubi/models/wiz_create_creditnote_ca.py:229
 #, python-format
 msgid "The value of the credit note amount must be positive."
 msgstr "Le montant des avoirs doit être positif."
 
 #. module: hubi
-#: code:addons/hubi/models/wiz_create_creditnote_ca.py:225
-#: code:addons/hubi/models/wiz_delevery_slip.py:216
+#: code:addons/hubi/models/wiz_create_creditnote_ca.py:224
 #, python-format
 msgid "There is no income account defined for this product: \"%s\". You may have to install a chart of account from Accounting app, settings menu."
 msgstr "Aucun compte de revenu pour cet article: \"%s\". Vous devez installer le paramétrage des comptes."
 
 #. module: hubi
-#: code:addons/hubi/models/inherited_sale_order.py:334
-#: code:addons/hubi/models/inherited_sale_order.py:338
+#: code:addons/hubi/models/inherited_sale_order.py:333
+#: code:addons/hubi/models/inherited_sale_order.py:337
 #, python-format
 msgid "There is no invoiceable line."
 msgstr "Aucune ligne facturable."
@@ -4075,7 +3552,6 @@ msgstr "Cette année"
 #: model:ir.actions.act_window,help:hubi.action_hubi_saleorder_report_carrier
 #: model:ir.actions.act_window,help:hubi.action_hubi_saleorder_report_daily
 #: model:ir.actions.act_window,help:hubi.action_hubi_saleorder_report_delivery
-#: model:ir.actions.act_window,help:hubi.action_hubi_saleorder_report_reference
 #: model:ir.actions.act_window,help:hubi.action_hubi_saleorder_report_weight
 msgid "This report performs analysis on your quotations and sales orders. Analysis check your sales revenues and sort it by different group criteria (salesman, partner, product, etc.) Use this report to perform analysis on sales not having invoiced yet. If you want to analyse your turnover, you should use the Invoice Analysis report in the Accounting application."
 msgstr "Ce rapport analyse vos devis et commandes clients. Il vérifie les revenus liés aux ventes et les classifie selon différents critères (vendeur, partenaire, article, etc.). Vous pouvez utiliser ce rapport pour analyser vos ventes non encore facturées. Si vous souhaitez analyser votre chiffre d'affaires, vous devriez utiliser le rapport \"Analyse des factures clients\" dans l'application comptabilité."
@@ -4118,7 +3594,6 @@ msgstr "Prix total"
 #. module: hubi
 #: model:ir.ui.view,arch_db:hubi.view_hubi_saleorder_report_carrier_tree
 #: model:ir.ui.view,arch_db:hubi.view_hubi_saleorder_report_daily_tree
-#: model:ir.ui.view,arch_db:hubi.view_hubi_saleorder_report_reference_tree
 msgid "Total Quantity"
 msgstr "Total Quantité"
 
@@ -4135,30 +3610,11 @@ msgstr "Total Taxes"
 #: model:ir.ui.view,arch_db:hubi.view_hubi_saleorder_report_carrier_tree
 #: model:ir.ui.view,arch_db:hubi.view_hubi_saleorder_report_daily_tree
 #: model:ir.ui.view,arch_db:hubi.view_hubi_saleorder_report_delivery_tree
-#: model:ir.ui.view,arch_db:hubi.view_hubi_saleorder_report_reference_tree
 msgid "Total Weight"
 msgstr "Total Poids"
 
 #. module: hubi
-#: model:ir.ui.view,arch_db:hubi.wiz_transfert_compta
-msgid "Transfer"
-msgstr "Transfert"
-
-#. module: hubi
-#: model:ir.model.fields,field_description:hubi.field_account_move_line_transfer_accounting
-msgid "Transfer Accounting"
-msgstr "Transfert Comptabilité"
-
-#. module: hubi
-#: model:ir.actions.act_window,name:hubi.action_hubi_transfert_compta
-#: model:ir.ui.view,arch_db:hubi.wiz_transfert_compta
-msgid "Transfert Compta"
-msgstr "Transfert Compta"
-
-#. module: hubi
-#: code:addons/hubi/reports/trial_balance_xlsx.py:19
 #: model:ir.ui.menu,name:hubi.menu_hubi_balance_report
-#, python-format
 msgid "Trial Balance"
 msgstr "Balance générale"
 
@@ -4181,12 +3637,6 @@ msgstr "Type Etiq"
 #: model:ir.model.fields,field_description:hubi.field_wiz_creditnote_type_invoice
 msgid "Type Invoice"
 msgstr "Type Facture"
-
-#. module: hubi
-#: model:ir.model.fields,field_description:hubi.field_hubi_general_settings_type_accounting
-#: model:ir.model.fields,field_description:hubi.field_wiz_general_settings_type_accounting
-msgid "Type of accounting"
-msgstr "Type de comptabilité"
 
 #. module: hubi
 #: model:ir.ui.view,arch_db:hubi.report_invoice_document_hubi
@@ -4226,12 +3676,7 @@ msgid "VAT"
 msgstr "TVA"
 
 #. module: hubi
-#: model:ir.ui.view,arch_db:hubi.wiz_general_settings_form
-msgid "Validation"
-msgstr "Validation"
-
-#. module: hubi
-#: model:ir.model.fields,field_description:hubi.field_hubi_parameter_value
+#: model:ir.model.fields,field_description:hubi.field_miadi_etiquette_parameter_value
 msgid "Value"
 msgstr "Valeur"
 
@@ -4272,6 +3717,7 @@ msgid "Vendor Credit Notes"
 msgstr "Avoirs de fournisseur"
 
 #. module: hubi
+#: model:ir.ui.view,arch_db:hubi.search_establishment
 #: model:ir.ui.view,arch_db:hubi.search_res_partner_filter
 msgid "Vendors"
 msgstr "Fournisseurs"
@@ -4293,11 +3739,6 @@ msgid "Volume"
 msgstr "Volume"
 
 #. module: hubi
-#: model:mail.template,subject:hubi.email_template_accounting_transfer
-msgid "Vos fichiers comptables"
-msgstr "Vos fichiers comptables"
-
-#. module: hubi
 #: selection:res.partner,periodicity_invoice:0
 #: selection:wiz.invoiceperiod,periodicity_invoice:0
 msgid "Weekly"
@@ -4305,7 +3746,6 @@ msgstr "Hebdomadaire"
 
 #. module: hubi
 #: model:ir.model.fields,field_description:hubi.field_hubi_family_weight
-#: model:ir.model.fields,field_description:hubi.field_wiz_create_print_label_pds
 #: model:ir.model.fields,field_description:hubi.field_wiz_create_product_from_category_weight
 #: model:ir.model.fields,field_description:hubi.field_wiz_sale_order_print_label_pds
 #: model:ir.ui.view,arch_db:hubi.report_invoice_document_hubi
@@ -4344,11 +3784,6 @@ msgstr "Assistant de création produits à partir du tarif dans les bons de comm
 #: model:ir.model,name:hubi.model_wiz_search_product_line
 msgid "Wizard create products line from price list in the sale orders"
 msgstr "Assistant de création des lignes produits à partir du tarif dans les bons de commande"
-
-#. module: hubi
-#: model:ir.model,name:hubi.model_wiz_create_print_label
-msgid "Wizard creation of a label and print it"
-msgstr "Assistant de création d'une étiquette et impression"
 
 #. module: hubi
 #: model:ir.model,name:hubi.model_wiz_creditnote
@@ -4391,16 +3826,6 @@ msgid "Wizard to create table in order to stock order line"
 msgstr "Assistant pour créer la table afin de stocker les lignes de commandes"
 
 #. module: hubi
-#: model:ir.model,name:hubi.model_wiz_transfertcompta
-msgid "Wizard transfert compta"
-msgstr "Assistant transfert compta"
-
-#. module: hubi
-#: model:ir.ui.view,arch_db:hubi.wiz_transfert_compta
-msgid "Writing File"
-msgstr "Fichier des Ecritures"
-
-#. module: hubi
 #: model:ir.ui.view,arch_db:hubi.view_partner_establishment
 msgid "ZIP"
 msgstr "Code postal"
@@ -4422,8 +3847,6 @@ msgstr "Code postal - Ville:"
 #: selection:product.pricelist.item,price_color:0
 #: selection:product.template,product_color:0
 #: selection:res.partner,customer_color_etiq:0
-#: selection:wiz_create_print_label,color_etiq:0
-#: selection:wiz_sale_order_print_label,color_etiq:0
 msgid "blue"
 msgstr "bleu"
 
@@ -4432,8 +3855,6 @@ msgstr "bleu"
 #: selection:product.pricelist.item,price_color:0
 #: selection:product.template,product_color:0
 #: selection:res.partner,customer_color_etiq:0
-#: selection:wiz_create_print_label,color_etiq:0
-#: selection:wiz_sale_order_print_label,color_etiq:0
 msgid "brown"
 msgstr "marron"
 
@@ -4453,7 +3874,7 @@ msgstr "classique"
 #: model:ir.ui.view,arch_db:hubi.view_partner_customer
 #: model:ir.ui.view,arch_db:hubi.view_partner_establishment
 msgid "e.g. FR0477472701"
-msgstr "ex. FR0477472701"
+msgstr "e.g. FR0477472701"
 
 #. module: hubi
 #: model:ir.ui.view,arch_db:hubi.view_partner_establishment
@@ -4463,7 +3884,7 @@ msgstr "Ex. : M."
 #. module: hubi
 #: model:ir.ui.view,arch_db:hubi.view_partner_establishment
 msgid "e.g. Sales Director"
-msgstr "Ex. : Directeur Commercial"
+msgstr "ex : Directeur Commercial"
 
 #. module: hubi
 #: model:ir.ui.view,arch_db:hubi.view_partner_establishment
@@ -4475,8 +3896,6 @@ msgstr "Ex. : www.groupeadinfo.com"
 #: selection:product.pricelist.item,price_color:0
 #: selection:product.template,product_color:0
 #: selection:res.partner,customer_color_etiq:0
-#: selection:wiz_create_print_label,color_etiq:0
-#: selection:wiz_sale_order_print_label,color_etiq:0
 msgid "green"
 msgstr "vert"
 
@@ -4485,20 +3904,18 @@ msgstr "vert"
 #: selection:product.pricelist.item,price_color:0
 #: selection:product.template,product_color:0
 #: selection:res.partner,customer_color_etiq:0
-#: selection:wiz_create_print_label,color_etiq:0
-#: selection:wiz_sale_order_print_label,color_etiq:0
 msgid "grey"
 msgstr "gris"
 
 #. module: hubi
 #: model:ir.model,name:hubi.model_hubi_product_category_caliber
 msgid "hubi.product_category_caliber"
-msgstr "Hubi - produit_categorie_calibre"
+msgstr "hubi.product_category_caliber"
 
 #. module: hubi
 #: model:ir.model,name:hubi.model_hubi_product_customer_description
 msgid "hubi.product_customer_description"
-msgstr "Hubi - produit_client_description"
+msgstr "hubi.product_customer_description"
 
 #. module: hubi
 #: model:ir.ui.view,arch_db:hubi.view_partner_establishment
@@ -4681,16 +4098,8 @@ msgstr "large"
 #: selection:product.pricelist.item,price_color:0
 #: selection:product.template,product_color:0
 #: selection:res.partner,customer_color_etiq:0
-#: selection:wiz_create_print_label,color_etiq:0
-#: selection:wiz_sale_order_print_label,color_etiq:0
 msgid "magenta"
 msgstr "magenta"
-
-#. module: hubi
-#: model:ir.model.fields,field_description:hubi.field_hubi_general_settings_name
-#: model:ir.model.fields,field_description:hubi.field_wiz_general_settings_name
-msgid "name"
-msgstr "name"
 
 #. module: hubi
 #: model:ir.ui.view,arch_db:hubi.wiz_prepare_sale_order_print_label
@@ -4704,17 +4113,10 @@ msgid "other"
 msgstr "autre"
 
 #. module: hubi
-#: model:ir.actions.act_window,name:hubi.action_hubi_palletization
-msgid "palletization"
-msgstr "palettisation"
-
-#. module: hubi
 #: selection:delivery.carrier,color_carrier:0
 #: selection:product.pricelist.item,price_color:0
 #: selection:product.template,product_color:0
 #: selection:res.partner,customer_color_etiq:0
-#: selection:wiz_create_print_label,color_etiq:0
-#: selection:wiz_sale_order_print_label,color_etiq:0
 msgid "pink"
 msgstr "rose"
 
@@ -4723,30 +4125,13 @@ msgstr "rose"
 #: selection:product.pricelist.item,price_color:0
 #: selection:product.template,product_color:0
 #: selection:res.partner,customer_color_etiq:0
-#: selection:wiz_create_print_label,color_etiq:0
-#: selection:wiz_sale_order_print_label,color_etiq:0
 msgid "red"
 msgstr "rouge"
 
 #. module: hubi
-#: model:ir.model,name:hubi.model_report_trial_balance_qweb
-msgid "report_trial_balance_qweb"
-msgstr "rapport_trial_balance_qweb"
-
-#. module: hubi
-#: model:ir.model,name:hubi.model_report_trial_balance_qweb_account
-msgid "report_trial_balance_qweb_account"
-msgstr "rapport_trial_balance_qweb_account"
-
-#. module: hubi
-#: model:ir.model,name:hubi.model_report_trial_balance_qweb_partner
-msgid "report_trial_balance_qweb_partner"
-msgstr "rapport_trial_balance_qweb_partner"
-
-#. module: hubi
 #: model:ir.ui.view,arch_db:hubi.view_hubi_invoice_report_tree
 msgid "residual"
-msgstr "résiduel"
+msgstr "residuel"
 
 #. module: hubi
 #: model:ir.ui.view,arch_db:hubi.view_hubi_saleorder_report_carrier_tree
@@ -4762,11 +4147,6 @@ msgstr "commande_journalier_rapport"
 #: model:ir.ui.view,arch_db:hubi.view_hubi_saleorder_report_delivery_tree
 msgid "saleorder_delivery_report"
 msgstr "commande_livraison_rapport"
-
-#. module: hubi
-#: model:ir.ui.view,arch_db:hubi.view_hubi_saleorder_report_reference_tree
-msgid "saleorder_reference_report"
-msgstr "commande_reference_rapport"
 
 #. module: hubi
 #: selection:product.pricelist.item,etiq_format:0
@@ -4785,8 +4165,6 @@ msgstr "poids"
 #: selection:product.pricelist.item,price_color:0
 #: selection:product.template,product_color:0
 #: selection:res.partner,customer_color_etiq:0
-#: selection:wiz_create_print_label,color_etiq:0
-#: selection:wiz_sale_order_print_label,color_etiq:0
 msgid "white"
 msgstr "blanc"
 
@@ -4795,8 +4173,6 @@ msgstr "blanc"
 #: selection:product.pricelist.item,price_color:0
 #: selection:product.template,product_color:0
 #: selection:res.partner,customer_color_etiq:0
-#: selection:wiz_create_print_label,color_etiq:0
-#: selection:wiz_sale_order_print_label,color_etiq:0
 msgid "yellow"
 msgstr "jaune"
 
