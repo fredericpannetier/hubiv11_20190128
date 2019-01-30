@@ -105,7 +105,7 @@ class Wizard_productprice(models.TransientModel):
                     'price_EAN13': barcode, 
                     'date_start': self.date_start,
                     'date_end': self.date_end, 
-                    'price_weight': price_weight,              
+                    'price_weight': price_weight,
                      }
                 if self.env.context.get('tx_currency_id'):
                     price_vals['currency_id'] = self.env.context.get('tx_currency_id')
@@ -123,6 +123,7 @@ class Wizard_productprice(models.TransientModel):
                 "target":"new",
                 "res_model":"wiz.productprice"                
                 }
+
 
     
     @api.model

@@ -40,7 +40,8 @@
         <field name="view_id" ref="view_hubi_invoice_weight_report_pivot"/>
         <field name="help">From this report, you can have an overview of the weight invoiced to your customers. The search tool can also be used to personalise your Invoices reports and so, match this analysis to your needs.</field>
     </record>  
-    
+
+
     <record id="view_hubi_invoice_report_tree" model="ir.ui.view" >
         <field name="name">hubi.invoice.report.tree</field>
         <field name="model">account.invoice.report</field>        
@@ -155,7 +156,7 @@
         <field name="help">From this report, you can have an overview of the free products invoiced to your customers. The search tool can also be used to personalise your Invoices reports and so, match this analysis to your needs.</field>
     </record>
     
-    <record id="action_hubi_invoice_report_detail" model="ir.actions.act_window">
+	<record id="action_hubi_invoice_report_detail" model="ir.actions.act_window">
         <field name="name">Invoices Analysis Detail</field>
         <field name="res_model">account.invoice.report</field>
         <field name="view_type">form</field>
@@ -169,4 +170,6 @@
                 (0, 0, {'view_mode': 'tree', 'view_id': ref('view_hubi_invoice_report_tree')})]"/>
         <field name="help">From this report, you can have an overview of the amount invoiced to your customers. The search tool can also be used to personalise your Invoices reports and so, match this analysis to your needs.</field>
     </record> 
+    
+    
 </odoo>

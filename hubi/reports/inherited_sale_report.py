@@ -15,7 +15,7 @@ class HubiSaleReport(models.Model):
     
     packaging_date = fields.Datetime('Date Order', readonly=True)
     sending_date = fields.Datetime('Sending Date', readonly=True)
-    #effective_date = fields.Datetime('Effective Date', readonly=True)
+    effective_date = fields.Datetime('Effective Date', readonly=True)
     invoice_status = fields.Selection([
         ('upselling', 'Upselling Opportunity'),
         ('invoiced', 'Fully Invoiced'),
@@ -28,12 +28,10 @@ class HubiSaleReport(models.Model):
     def _select(self):
         return super(HubiSaleReport, self)._select() + """,dc.name as carrier_name,
                 pc.complete_name as category_name, hfc.name as caliber_name, 
-                hfp.name as packaging_name, 
-                
-                s.confirmation_date as sending_date, s.packaging_date as packaging_date,
+                hfp.name as packaging_name, s.effective_date as effective_date, 
+                s.sending_date as sending_date, s.packaging_date as packaging_date,
                 s.invoice_status as invoice_status, avg(l.price_weight) as price_weight"""
-            #s.effective_date as effective_date, 
-                
+
     def _from(self):
         return super(HubiSaleReport, self)._from() + """left join delivery_carrier dc on (s.carrier_id = dc.id)
                     left join product_category pc on (t.categ_id = pc.id)
@@ -43,7 +41,6 @@ class HubiSaleReport(models.Model):
     def _group_by(self):
         return super(HubiSaleReport, self)._group_by() + """, dc.name,
                     pc.complete_name, hfc.name,hfp.name,
-                    
-                    s.confirmation_date, s.sending_date,
+                    s.effective_date, s.sending_date,
                     s.packaging_date, s.invoice_status"""
-            #s.effective_date,        
+                    

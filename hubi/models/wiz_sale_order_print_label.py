@@ -110,7 +110,7 @@ class wizard_sale_order_print_label(models.Model):
                     INNER JOIN sale_order_line ol ON o.id = ol.order_id
                     INNER JOIN product_product p ON ol.product_id = p.id
                     INNER JOIN res_partner t ON o.partner_id = t.id
-                    LEFT JOIN res_partner etab ON t.sender_establishment = etab.id
+                    INNER JOIN res_partner etab ON t.sender_establishment = etab.id
                     INNER JOIN product_template pt ON p.product_tmpl_id = pt.id 
                     LEFT JOIN hubi_family categ ON pt.caliber_id = categ.id
                     LEFT JOIN hubi_family cond ON pt.packaging_id = cond.id 
@@ -173,7 +173,7 @@ class wizard_sale_order_print_label(models.Model):
                 default_value = self.env['hubi.parameter'].search([('name', '=', 'DEFAULT')])
                 for default in default_value:
                     if (printer is None):
-                        printer = default.printer_id.id
+                        printer = default.printer_id
                     #if (etiq is None):
                     #    etiq = default.label_model_id
                     

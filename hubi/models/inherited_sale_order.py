@@ -97,24 +97,23 @@ class HubiSaleOrder(models.Model):
         self._cr.execute("DELETE FROM wiz_search_product_line WHERE order_line_id=%s AND pricelist_line_id=%s", (self.id,self.pricelist_id.id,))
         
         prod_prec = ''
-        query = """Select product_product.id, date_start, date_end, product_category.complete_name, hubi_family.name, 
+        query = """select product_tmpl_id, date_start, date_end, product_category.complete_name, hubi_family.name, 
                     case compute_price when 'fixed' then fixed_price else list_price*(1-percent_price/100) end as Price,
-                    case when  date_start is null then '01/01/1900' ELSE date_start END as date_debut, min_quantity 
-                    from product_pricelist_item
-                    inner join product_template on product_pricelist_item.product_tmpl_id=product_template.id
-                    inner join product_product on product_product.product_tmpl_id=product_template.id
+                    case when  date_start is null then '01/01/1900' ELSE date_start END as date_debut
+                    from product_pricelist_item 
+                    inner join product_template on product_tmpl_id=product_template.id
                     inner join product_category on product_template.categ_id = product_category.id
                     inner join hubi_family on product_template.caliber_id = hubi_family.id
-                    where (pricelist_id= %(pricelist_code)s ) and (product_pricelist_item.product_tmpl_id is not null) 
+                    where (pricelist_id= %(pricelist_code)s ) and (product_tmpl_id is not null) 
                     and (date_start<=%(date_order)s  or date_start is null)
                     and (date_end>=%(date_order)s  or date_start is null)
-                    AND (product_product.id NOT IN (SELECT product_id FROM sale_order_line WHERE order_id=%(id_order)s))
-                    order by product_product.id, date_debut desc, min_quantity """
+                    AND (product_tmpl_id NOT IN (SELECT product_id FROM sale_order_line WHERE order_id=%(id_order)s))
+                    order by product_tmpl_id, date_debut desc"""
 
         self.env.cr.execute(query, query_args)
-        ids = [(r[0], r[1], r[2], r[3], r[4], r[5], r[6], r[7]) for r in self.env.cr.fetchall()]
+        ids = [(r[0], r[1], r[2], r[3], r[4], r[5], r[6]) for r in self.env.cr.fetchall()]
             
-        for product, date_start, date_end, category, caliber, unit_price, date_debut, qty in ids:
+        for product, date_start, date_end, category, caliber, unit_price, date_debut in ids:
             if product != prod_prec:
                 price_vals = {
                     'order_line_id': sale_order_id,

@@ -9,7 +9,7 @@ class WizSearchProduct(models.TransientModel):
     pricelist_id = fields.Integer('Price list')
     message = fields.Text(string="Information")
     #pricelist_line_ids = fields.One2many('wiz.search.product.line', 'order_line_id', string='Price list line')
-    
+    pricelist_line_ids = fields.Char('a')
     
     _sql_constraints = [
     ('uniq_order', 'unique(order_id)', 'A wiz already exists with this sale order. It must be unique !'),
@@ -95,7 +95,7 @@ class WizSearchProductLine(models.TransientModel):
     
     order_line_id= fields.Integer('Order')
     pricelist_line_id= fields.Integer('Price list')
-    product_id = fields.Many2one('product.product', 'Product')
+    product_id = fields.Many2one('product.template', 'Product')
     qty_invoiced = fields.Float(string='Quantity')
     price_unit = fields.Float( string='Price Unit')
     date_start = fields.Date(string='Date Start')
@@ -103,68 +103,18 @@ class WizSearchProductLine(models.TransientModel):
     category_id= fields.Char('Category')
     caliber_id= fields.Char('Caliber')
 
-    #@api.onchange('qty_invoiced', 'price_unit')
-    #def _onchange_reference(self):
-    #   qty=self.qty_invoiced
-    #   px=self.price_unit
-    #   origin_line = getattr(self, '_origin', self)
-    #   self._cr.execute("UPDATE wiz_search_product_line SET  qty_invoiced=%s , price_unit=%s WHERE id=%s", (qty,px,origin_line.id,))
-    #   self.env.cr.commit()
-       
-    @api.onchange('qty_invoiced')
-    def _onchange_qty(self):
-        origin_line = getattr(self, '_origin', self)
-        # Find price for this quantity
-        pricelist_item = self.env['product.pricelist.item'].search([
-            ('pricelist_id', '=', self.pricelist_line_id),
-            ('product_tmpl_id', '=', self.product_id.product_tmpl_id.id)], order='min_quantity desc')
-        for item in pricelist_item:
-            if item.min_quantity <= self.qty_invoiced:
-               #case compute_price when 'fixed' then fixed_price else list_price*(1-percent_price/100) end as Price
-                if item.compute_price == 'fixed':
-                   self.price_unit = item.fixed_price  
-                else:
-                   self.price_unit =  item.product_tmpl_id.list_price*(1-item.percent_price/100) 
-
-                values = ({ 
-                    'price_unit' : self.price_unit or 0.00,
-                    'qty_invoiced': self.qty_invoiced or 0.00, 
-                    })
-                #self.update(values) 
-                
-                 
-                #self.super(WizSearchProductLine, self.sudo()).write({
-                #    'price_unit': self.price_unit or 0.00,
-                #    'qty_invoiced': self.qty_invoiced or 0.00 
-                #})
-                self._cr.execute("UPDATE wiz_search_product_line SET  qty_invoiced=%s , price_unit=%s WHERE id=%s", (self.qty_invoiced,self.price_unit,origin_line.id,))
-                self.env.cr.commit()
-                return 
-        
-        values = ({ 
-            'qty_invoiced': self.qty_invoiced or 0.00, 
-            })
-        self._cr.execute("UPDATE wiz_search_product_line SET  qty_invoiced=%s  WHERE id=%s", (self.qty_invoiced,origin_line.id,))
-        self.env.cr.commit()
-        #self.update(values)   
-
-    @api.onchange('price_unit')
-    def _onchange_price(self):
-        origin_line = getattr(self, '_origin', self)
-        values = ({ 
-            'price_unit' : self.price_unit or 0.00,
-            'qty_invoiced': self.qty_invoiced or 0.00, 
-            })
-        #self.update(values)
-        self._cr.execute("UPDATE wiz_search_product_line SET  price_unit=%s WHERE id=%s", (self.price_unit,origin_line.id,))
-        self.env.cr.commit()   
+    @api.onchange('qty_invoiced', 'price_unit')
+    def _onchange_reference(self):
+       qty=self.qty_invoiced
+       px=self.price_unit
+       origin_line = getattr(self, '_origin', self)
+       self._cr.execute("UPDATE wiz_search_product_line SET  qty_invoiced=%s , price_unit=%s WHERE id=%s", (qty,px,origin_line.id,))
+       self.env.cr.commit()
         
     @api.multi
     def update_sale(self):
         #update sale line depending on the price list
-        #origin_line = getattr(self, '_origin', self)
-        #self._cr.execute("UPDATE wiz_search_product_line SET  qty_invoiced=%s , price_unit=%s WHERE id=%s", (self.qty_invoiced,self.price_unit,origin_line.id,))
-        #self.env.cr.commit()
+        self.env.cr.commit()
        
         pricelist = self.pricelist_line_id
         order_line = self.order_line_id

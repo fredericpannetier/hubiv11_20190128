@@ -5,13 +5,7 @@ from . import tools_hubi
    
 class HubiProductPriceList(models.Model):
     _inherit = "product.pricelist"
-
-    def _get_default_company_id(self):
-        return self._context.get('force_company', self.env.user.company_id.id)
     
-    company_id = fields.Many2one('res.company', string='Company',
-        default=_get_default_company_id, required=True)
-
     shipping = fields.Boolean(string='Shipping', default=False)
     shipping_price_kg = fields.Float(string='Shipping Price Kg')
     
@@ -96,7 +90,7 @@ class HubiProductPriceListItem(models.Model):
         elif self.product_id:
             self.default_price = '0'
         else:
-            self.default_price = '0'   
+            self.default_price = '0'            
 
     @api.one
     @api.depends('product_tmpl_id', 'product_id')
@@ -104,19 +98,17 @@ class HubiProductPriceListItem(models.Model):
         products_templ = self.env['product.template'].search([('id', '=', self.product_tmpl_id.id)])            
         self.weight = ("%s") % (products_templ.weight)
 
-    @api.one
-    def _compute_price_weight(self):
-        if self.weight != 0:
-            self.price_weight = self.fixed_price / self.weight
-        else:    
-            self.price_weight = self.fixed_price
-        self.price_weight = round(self.price_weight ,3)
-        
-    @api.one
-    def _compute_price_total(self):
-        if self.price_weight != 0:
-            self.fixed_price = self.price_weight * self.weight
-        
+    @api.onchange('price_ean13')
+    def _onchange_barcode(self):
+        # Test si code EAN13 correct
+        #result = {}
+        if self.price_ean13:
+            if (len(self.price_ean13) < 12 or len(self.price_ean13) > 14):
+                raise ValidationError("ERROR : Barcode EAN13. The length is invalid")
+            else:
+                cle_ean13 = tools_hubi.calcul_cle_code_ean13(self, self.price_ean13)
+                self.price_ean13 = tools_hubi.mid(self.price_ean13,0,12) + cle_ean13
+
     @api.onchange('price_weight')
     def _onchange_price_weight(self):
         if (self.price_weight != 0) and (self.weight !=0):
@@ -130,20 +122,6 @@ class HubiProductPriceListItem(models.Model):
         else:    
             self.price_weight = self.fixed_price
         self.price_weight = round(self.price_weight ,3)
-        
-
-
-    @api.onchange('price_ean13')
-    def _onchange_barcode(self):
-        # Test si code EAN13 correct
-        #result = {}
-        if self.price_ean13:
-            if (len(self.price_ean13) < 12 or len(self.price_ean13) > 14):
-                raise ValidationError("ERROR : Barcode EAN13. The length is invalid")
-            else:
-                cle_ean13 = tools_hubi.calcul_cle_code_ean13(self, self.price_ean13)
-                self.price_ean13 = tools_hubi.mid(self.price_ean13,0,12) + cle_ean13
-
 
     price_option = fields.Boolean(string='Price Option', default=False)
     price_color = fields.Selection([("#FF00FF", "magenta"),("#0000FF", "blue"),
@@ -168,9 +146,6 @@ class HubiProductPriceListItem(models.Model):
     default_price = fields.Char('Default Price', compute='_get_default_price', help="Default price for this product.")
     #color = fields.Integer(string='Price Color')
     label_model_id =  fields.Many2one('hubi.labelmodel', string='Label model')
-    weight = fields.Float(string='Weight for this product', compute='_get_weight')
-    #price_weight = fields.Float(string='Price Weight', store=True, compute='_compute_price_weight', inverse='_compute_price_total')
-    price_weight = fields.Float(string='Price Weight')
 
     is_ifls=fields.Boolean(string='is_IFLS', compute='_is_Visible', default=lambda self: self._default_is_Visible('GESTION_IFLS'))
     is_etiq_format=fields.Boolean(string='is_ETIQ_FORMAT', compute='_is_Visible', default=lambda self: self._default_is_Visible('ETIQ_FORMAT'))
@@ -179,3 +154,6 @@ class HubiProductPriceListItem(models.Model):
     is_tarif_code_interne=fields.Boolean(string='is_CODE_INTERNE', compute='_is_Visible', default=lambda self: self._default_is_Visible('TARIF_CODE_INTERNE'))
     is_tarif_ref_client=fields.Boolean(string='is_REF_CLIENT', compute='_is_Visible', default=lambda self: self._default_is_Visible('TARIF_REF_CLIENT'))
     is_tarif_lib_promo=fields.Boolean(string='is_LIB_PROMO', compute='_is_Visible', default=lambda self: self._default_is_Visible('TARIF_LIB_PROMO'))
+
+    weight = fields.Float(string='Weight for this product', compute='_get_weight')
+    price_weight = fields.Float(string='Price Weight')
